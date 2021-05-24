@@ -63,6 +63,9 @@
     align-items: center;
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
 /*[ SIZE ]
 */
 .h-10{height: 10%;}
