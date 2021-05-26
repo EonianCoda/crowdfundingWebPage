@@ -25,29 +25,43 @@
     <header class="headerpage">
     </header>
     <section class="bottom-divider p-t-40 p-b-40">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="container horizon-items" >
                 <div class="w-60 m-r-30 horizon-center vertical-center prop">
-                    <input type="file" name="prop-img">
+                    <input id="myfile" type="file"><br/>
+		            <img src="" id="show" width="100%">
+		            <script type="text/javascript">
+			        $(function() {
+
+                        $("#myfile").change(function() {
+                        var readFile = new FileReader();
+                        var mfile = $("#myfile")[0].files[0];  //注意這裡必須時$("#myfile")[0]，document.getElementById('file')等價與$("#myfile")[0]
+                        readFile.readAsDataURL(mfile);
+                        readFile.onload = function() {
+                            var img = $("#show");
+                            img.attr("src", this.result);
+                        }
+                        });
+
+                    })
+		</script>
                 </div>
                 <div class="w-40 vertical-items">
                     <div class="prop">
-                        <textarea class="textarea_input" name="prop-name">
+                        <textarea class="textarea_input" name="prop-name">這裡填入你的募款名稱
                         </textarea>
                     </div>
                     <div class="prop">
                         <p class="vertical-divider-thick"> 
-                            <textarea class="textarea_input" name="prop-intro">
+                            <textarea class="textarea_input" name="prop-intro">為你的專案簡短介紹
                             </textarea>
                         </p>
                     </div>
                     <div class="horizon-items prop">
                         <input class="form-input" type="text" name="prop-objectname" placeholder="提案人" required> <br>
                     </div>
-                    <div class="horizon-between vertical-center bottom-divider prop">
-                        <div class="horizon-items vertical-center">
+                    <div class="horizon-items prop">
                             <input class="form-input" type="number" name="prop-price" placeholder="募款金額" required> <br>
-                        </div>
                     </div>
                     <button class="button"> 完成表單</button>
                 </div>
@@ -66,14 +80,15 @@
     </div>
     <div class="container horizon-center m-t-20 ">
         <div>
-            <input type="file" name="prop-img2"><br>
-            <input type="file" name="prop-img3"><br>
-            <input type="file" name="prop-img4"><br>
-            <input type="file" name="prop-img5"><br>
-            <input type="file" name="prop-img6"><br>
-            <textarea class="textarea_input" name="prop-content1">
+            圖片1: <input type="file" name="prop-img2"accept="image/gif, image/jpeg, image/png"><br>
+            圖片2: <input type="file" name="prop-img3" accept="image/gif, image/jpeg, image/png"><br>
+            圖片3: <input type="file" name="prop-img4" accept="image/gif, image/jpeg, image/png"><br>
+            圖片4: <input type="file" name="prop-img5" accept="image/gif, image/jpeg, image/png"><br>
+            圖片5: <input type="file" name="prop-img6" accept="image/gif, image/jpeg, image/png"><br>
+            <br>
+            <textarea class="textarea_input" name="prop-content1">產品的詳細內容
             </textarea>
-            <textarea class="textarea_input" name="prop-content2">
+            <textarea class="textarea_input" name="prop-content2">聯絡方式
             </textarea>
         </div>
 

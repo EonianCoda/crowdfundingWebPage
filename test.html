@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <input id="myfile" type="file"><br/>
+		<img src="" id="show" width="200">
+		<script type="text/javascript">
+			$(function() {
+
+				$("#myfile").change(function() {
+					var readFile = new FileReader();
+					var mfile = $("#myfile")[0].files[0];  //注意這裡必須時$("#myfile")[0]，document.getElementById('file')等價與$("#myfile")[0]
+					readFile.readAsDataURL(mfile);
+					readFile.onload = function() {
+						var img = $("#show");
+						img.attr("src", this.result);
+					}
+
+				});
+
+			})
+		</script>
+</body>
+</html>
