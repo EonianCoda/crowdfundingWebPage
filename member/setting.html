@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/util.css">
     <link rel="stylesheet" href="../styles/basis.css">
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css">
+    <script src="../js/swiper/swiper-bundle.min.js"></script>
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../js/all.js"></script>
     <script src="../js/nav.js"></script>
@@ -21,8 +23,9 @@
     <div class="container member">
         <h3>個人資料</h3>
         <div class="horizon-items vertical-start">
-            <div class="image-container w-50">
-                <img src="../images/product/robot.jpg">
+            <div class="image-container w-50 .p-r-100" style="max-height: 25em;">
+                <img src="../images/wojak.jpg" style="max-width: 20em; max-height:20em;">
+                <input type="File" name="profile_picture">
             </div>
             <div class="w-50">
                 <form>
@@ -37,6 +40,36 @@
                 </form>
             </div>
         </div>
+        <h3>我的提案</h3>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+            <script>
+                var my_swp = new Swiper('.swiper-container',{
+                    loop:true, 
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                    },
+                });
+            </script>
+          </div>
+        <h3>我的贊助項目</h3>
+        <h3>我的關注清單</h3>
 
     </div>
 
