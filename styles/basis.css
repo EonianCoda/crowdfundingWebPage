@@ -62,7 +62,11 @@
     display: flex;
     align-items: center;
 }
-
+.vertical-start
+{
+    display: flex;
+    align-items: flex-start;
+}
 .wrap{
     flex-wrap: wrap;
 }
