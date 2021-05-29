@@ -5,7 +5,7 @@
         global $lo;
         if($lo == true)
         {
-            echo "<li><a href='../member/member.html'>會員中心</a></li>";
+            echo "<li><a href='../member/setting.html'>會員中心</a></li>";
         }
         else
         {
