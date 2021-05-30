@@ -1,16 +1,11 @@
 <?php
-  require_once("sql_info.php");
+
+  if (!function_exists('get_conn')) require_once("sql_info.php");
 
   //set time zone
   function gen_key()
   {
       return substr(str_shuffle(MD5(microtime())), 0, 10);
-  }
-  function get_conn()
-  {
-    global $mysql_servername, $mysql_username, $mysql_password, $mysql_DB_name;
-    $conn = mysqli_connect($mysql_servername,$mysql_username,$mysql_password,$mysql_DB_name);
-    return $conn;
   }
 
   function register($POST)
@@ -37,7 +32,7 @@
     }
 
     $sql = sprintf("INSERT INTO members (username, password, realname, birthday, phone_number,
-                  useremail, project) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')", 
+                  useremail, project, photo) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', 'None')", 
                   $POST['username'], $hash, $POST['realname'], $POST['birthday'], $POST['phone_number'], 
                   $POST['useremail'], $empty_project);
 

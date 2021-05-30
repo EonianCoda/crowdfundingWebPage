@@ -20,23 +20,27 @@
     </header>
     <div class="member_nav">
     </div>
+    <?php
+        if (!function_exists('get_personal_info')) require_once("../backend/member_info.php");
+        $user_data = get_personal_info();
+    ?>
     <div class="container member">
         <h3>個人資料</h3>
         <div class="horizon-items vertical-start">
             <div class="image-container w-50 .p-r-100" style="max-height: 25em;">
-                <img src="../images/wojak.jpg" style="max-width: 20em; max-height:20em;">
+                <img src= "<?php get_personal_img($user_data); ?>" style="max-width: 20em; max-height:20em;">
                 <input type="File" name="profile_picture">
             </div>
             <div class="w-50">
                 <form>
                     名稱:
-                    <input class="form-input" type="text"  name="username" placeholder="名稱" value="大帥哥" required> <br>
+                    <input class="form-input" type="text"  name="username" placeholder="名稱" value="<?php echo $user_data['username']; ?>" required> <br>
                     真實名稱:
-                    <input class="form-input" type="text"  name="realname" placeholder="真實名稱" value="大帥哥" required> <br>
+                    <input class="form-input" type="text"  name="realname" placeholder="真實名稱" value="<?php echo $user_data['realname']; ?>" required> <br>
                     電子信箱:
-                    <input class="form-input" type="email" name="useremail" placeholder="註冊信箱" value="haha@gmail.com" required> <br>
+                    <input class="form-input" type="email" name="useremail" placeholder="註冊信箱" value="<?php echo $user_data['useremail']; ?>" required> <br>
                     電話號碼:
-                    <input class="form-input" type="phone_number" name="phone_number" placeholder="手機" value="0912121212" required> <br>
+                    <input class="form-input" type="text" name="phone_number" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="手機" value="<?php echo $user_data['phone_number']; ?>" required> <br>
                 </form>
             </div>
         </div>
