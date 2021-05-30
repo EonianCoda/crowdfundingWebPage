@@ -1,17 +1,43 @@
 <?php
   if (!function_exists('authentication')) require_once("account.php");
+
+
+/*
+Returns:
+    0: Success
+    1: old password error
+    2: unknow error
+*/
+  function edit_password($old_password, $new_password)
+  {
+    session_start();
+    if(!isset($_SESSION['online_key'])) return NULL;
+    $user_id = authentication($_SESSION['online_key']);
+    $conn = get_conn();
+    
+    $sql = "SELECT password FROM members WHERE id = $user_id";
+    $r = mysqli_query($conn, $sql);
+    //Unknow error
+    if(mysqli_num_rows($r) == 0) return 2;
+
+    $r = mysqli_fetch_row($r);
+    if(!password_verify($old_password, $r[0])) return 1;
+
+    $new_password = password_hash($new_password ,PASSWORD_DEFAULT);
+    $sql = sprintf("UPDATE members SET password = '%s' WHERE id = %s",$new_password, $user_id);
+    $r = mysqli_query($conn, $sql);
+    //Unknow error
+    if(!$r) return 2;
+
+    //edit success
+    return 0;
+  }
+
   function get_personal_info()
   {
       session_start();
-
-      if(!isset($_SESSION['online_key']))
-      {
-        
-        return NULL;
-      }
-      
+      if(!isset($_SESSION['online_key'])) return NULL;
       $user_id = authentication($_SESSION['online_key']);
-
       $conn = get_conn();
       
       

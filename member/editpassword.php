@@ -15,21 +15,34 @@
     <script src="../js/nav.js"></script>
     <title>Document</title>
 </head>
+
+
 <body>
     <header class="headerpage">
     </header>
     <div class="member_nav">
     </div>
+    <?php
+        if (!function_exists('edit_password')) require_once('../backend/member_info.php');
+        if (!function_exists('edit_password_alert')) require_once('../backend/alert.php');
+
+        if(isset($_POST['oldpassword']) AND (isset($_POST['newpassword'])))
+        {
+            $status_code = edit_password($_POST['oldpassword'], $_POST['newpassword']);
+            edit_password_alert($status_code);
+        }
+    ?>
     <div class="container member">
         <h3>修改密碼</h3>
-        <form>
+        
+        <form method ="POST" action="editpassword.php">
             請輸入舊密碼:
-            <input class="form-input" type="password"  name="oldpassword" placeholder="請輸入舊密碼" value="hahaisme" required> <br>
+            <input class="form-input" type="password"  name="oldpassword" placeholder="請輸入舊密碼" value="" required> <br>
             請輸入新密碼:
-            <input class="form-input" type="password"  name="newpassword" placeholder="請輸入新密碼" value="hahaisme" required> <br>
+            <input class="form-input" type="password"  name="newpassword" placeholder="請輸入新密碼" value="" required> <br>
             再輸入新密碼:
-            <input class="form-input" type="password"  name="newpassword2" placeholder="再輸入新密碼" value="hahaisme" required> <br>
-
+            <input class="form-input" type="password"  name="newpassword2" placeholder="再輸入新密碼" value="" required> <br>
+            <button type="submit" >確定修改</button>
         </form>
     </div>
 
