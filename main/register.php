@@ -24,6 +24,17 @@
 <body>
     <header class="headerpage">
     </header>
+    <?php
+        require_once('../backend/account.php');
+        require_once('../backend/alert.php');
+        if(isset($_POST['username']) AND (isset($_POST['password'])) AND (isset($_POST['realname'])) AND (isset($_POST['birthday'])) 
+        AND isset($_POST['phone_number']) AND (isset($_POST['useremail'])))
+        {
+            $status_code = register($_POST);
+            register_alert($status_code);
+        }
+    ?>
+
     <div class="container-fill">
         <div class="horizon-center m-t-60">
             <div class="vertical-items">
@@ -34,8 +45,8 @@
                     <input class="form-input" type="email" name="useremail" placeholder="註冊信箱" required> <br>
                     <input class="form-input" type="password" name="password" placeholder="密碼" required> <br>
                     <input class="form-input" type="password" name="confirmedpassword" placeholder="密碼確定" required> <br>
-                    <input class="form-input" type="number" name="phone_number" placeholder="手機" required><br>
-                    <input class="form-input" type="date" name="date" required><br>
+                    <input class="form-input" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" name="phone_number" placeholder="手機" required><br>
+                    <input class="form-input" type="date" name="birthday" required><br>
                     <label>
                         <input  type="checkbox" name="remeber"> </input>
                         同意我們的

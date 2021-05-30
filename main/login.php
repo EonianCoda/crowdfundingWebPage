@@ -25,13 +25,22 @@
     <header class="headerpage">
     </header>
 
+    <?php
+        require_once('../backend/account.php');
+        require_once('../backend/alert.php');
+        if(isset($_POST['username']) AND (isset($_POST['password'])))
+        {
+            $status_code = login($_POST);
+            login_alert($status_code);
+        }
+    ?>
     
     <div class="container-fill">
         <div class="horizon-center m-t-60">
             <div class="text-center vertical-items horizon-center w-20">
                 <h1>登入</h1>
                 <form method="POST">
-                    <input class="form-input" type="email" name="username" placeholder="帳號名稱" required> <br>
+                    <input class="form-input" type="text" name="username" placeholder="帳號名稱" required> <br>
                     <input class="form-input" type="password" name="password" placeholder="密碼" required> <br>
                     <div class="vertical-center horizon-between m-t-10">
                         <label>

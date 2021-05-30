@@ -1,5 +1,5 @@
 <?php 
-    $lo = true;
+    $lo = false;
     function login()
     {
         global $lo;
