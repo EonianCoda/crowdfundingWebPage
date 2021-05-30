@@ -6,10 +6,11 @@
         </div>
         <div class="container w-30">
             <h3>說明</h3>
+            <a href="./privacy.php">關於我們</a>
         </div>
         <div class="container w-30 vertlical-items">
             <h3>關於</h3>
-            <a href="./about.html">關於我們</a>
+            <a href="./about.php">關於我們</a>
             <div class="horizon-center copyright"> 
                 <p> ACHIEVE © B10730022 四資工三甲 楊雲翔</p>
                 <p> ACHIEVE © B10730026 四電機三甲 黃明勝</p>

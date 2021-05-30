@@ -203,7 +203,6 @@ nav li a {
   margin-top: 0;
   vertical-align: top;
 }
-<<<<<<< HEAD
 .logout{
     width:4em;
     outline: none;
@@ -219,12 +218,6 @@ nav li a {
     body{
         font-size:20px;
     } 
-=======
-@media screen and (min-width: 900px) {
-  body {
-    font-size: 20px;
-  }
->>>>>>> 16ae538e77182ad5eb6e59f545301a2d0b6b8124
 }
 @media screen and (max-width: 900px) {
   body {

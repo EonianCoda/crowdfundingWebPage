@@ -45,7 +45,7 @@
                     <div class="horizon-items horizon-center m-t-22">
                         <span class="c-gray">還沒有帳號? </span>
                         &nbsp; 
-                        <a href="../main/register.html">去註冊</a>
+                        <a href="../main/register.php">去註冊</a>
                     </div>
                 </form>
             </div>

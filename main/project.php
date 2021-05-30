@@ -29,32 +29,32 @@
         <h1>專案類別</h1>
         <div class="horizon-between vertical-center text-center m-t-45">
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=design" class="category-button-selected"> 
+                <a href="./project.php?category=design" class="category-button-selected"> 
                     <img src="../images/categoryIcon/design.png" height="100" width="100"> </img>
                     <p>設計<p>
                 </a>
             </div>
 
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=music" class="category-button"> 
+                <a href="./project.php?category=music" class="category-button"> 
                     <img src="../images/categoryIcon/music.png" height="100" width="100"> </img>
                     <p>音樂<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=education" class="category-button"> 
+                <a href="./project.php?category=education" class="category-button"> 
                     <img src="../images/categoryIcon/edu.png" height="100" width="100"> </img>
                     <p>教育<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=technology" class="category-button"> 
+                <a href="./project.php?category=technology" class="category-button"> 
                     <img src="../images/categoryIcon/tech.png" height="100" width="100"> </img>
                     <p>科技<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=life" class="category-button"> 
+                <a href="./project.php?category=life" class="category-button"> 
                     <img src="../images/categoryIcon/life.png" height="100" width="100"> </img>
                     <p>生活<p>
                 </a>
@@ -63,128 +63,107 @@
     </div>
 
     <section class="container m-t-25">
-        <div class="project-row">
+    <div class="horizon-between wrap">
             <div class="project-object">
-                <div class="vertical-items h-80">
-                    <div class="image-container h-80">
-                        <img src="../images/product/robot.jpg"> </img>
-                    </div>
-                    <a href="../main/content.html">   
-                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
+                <div class="image-container">
+                    <img src="../images/product/chicken.jpg">
+                </div>
+                <div class="h-40">
+                    <a href="../main/content.php">
+                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                     </a>
                 </div>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> 
-                            <b>300 %</b> 
-                        </p>
+                        <p class="vertical-divider"> <b>300 %</b> </p>
                     </div>
                     <p>還剩40天</p>
                 </div>
             </div>
-
             <div class="project-object">
-                <div class="vertical-items h-80">
-                    <div class="image-container h-80">
-                        <img src="../images/product/chicken.jpg"> </img>
-                    </div>
-                    <a href="../main/content.html">
-                         <h3> [CKU] 野雞大學，不願成為學歷工廠的大學典範 </h3>
+                <div class="image-container">
+                    <img src="../images/product/chicken.jpg">
+                </div>
+                <div class="h-40">
+                    <a href="../main/content.php">
+                        <h3> [KMT] 韓寶 </h3>
                     </a>
                 </div>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 900,500</b>
-                        <p class="vertical-divider"> 
-                            <b>20 %</b> 
-                        </p>
+                        <b>NT$ 2,900,500</b>
+                        <p class="vertical-divider"> <b>300 %</b> </p>
                     </div>
-                    <p>還剩2天</p>
+                    <p>還剩40天</p>
                 </div>
             </div>
             <div class="project-object">
-                <div class="vertical-items h-80">
-                    <div class="h-80">
-                        <img src="../images/product/pizza.jpg" width="100%" height="100%"> </img>
-                    </div>
-                    <a href="../main/content.html">
-                         <h3> Rupert智慧pizza製造器 | 能製作百種pizz a  </h3>
+                <div class="image-container ">
+                    <img src="../images/product/chicken.jpg">
+                </div>
+                <div class="h-40">
+                    <a href="../main/content.php">
+                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
-
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 800,500</b>
-                        <p class="vertical-divider"> 
-                            <b>300 %</b> 
-                        </p>
+                        <b>NT$ 2,900,500</b>
+                        <p class="vertical-divider"> <b>300 %</b> </p>
                     </div>
-                    <p>還剩22天</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-row">
-            <div class="project-object">
-                <div class="vertical-items h-80">
-                    <div class="image-container h-80">
-                        <img src="../images/product/guitar.jpg"> </img>
-                    </div>
-                    <a href="../main/content.html">
-                         <h3>Kubrick guitar | 市面上質感最好的木製吉他  </h3>
-                    </a>
-                </div>
-
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 123,500</b>
-                        <p class="vertical-divider"> 
-                            <b>35 %</b> 
-                        </p>
-                    </div>
-                    <p>還剩15天</p>
-                </div>
-            </div>
-
-            <div class="project-object">
-                <div class="vertical-items h-80">
-                    <div class="image-container h-80">
-                        <img src="../images/product/tea.jpg"> </img>
-                    </div>
-                    <a href="./main/content.html">
-                         <h3> Yushan台灣茶 | 經研究證實可抑制covid 19  </h3>
-                    </a>
-                </div>
-
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 102,900,500</b>
-                        <p class="vertical-divider"> 
-                            <b>50 %</b> 
-                        </p>
-                    </div>
-                    <p>還剩100天</p>
+                    <p>還剩40天</p>
                 </div>
             </div>
             <div class="project-object">
-                <div class="vertical-items h-80">
-                    <div class="image-container h-80">
-                        <img src="../images/product/game.jpg"> </img>
-                    </div>
-                    <a href="../main/content.html">
-                         <h3> 新世紀桌遊 | 保證是21世紀最好玩的桌上遊戲  </h3>
+                <div class="image-container ">
+                    <img src="../images/product/chicken.jpg">
+                </div>
+                <div class="h-40">
+                    <a href="../main/content.php">
+                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
-
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 1,000</b>
-                        <p class="vertical-divider"> 
-                            <b>5 %</b> 
-                        </p>
+                        <b>NT$ 2,900,500</b>
+                        <p class="vertical-divider"> <b>300 %</b> </p>
                     </div>
-                    <p>還剩33天</p>
+                    <p>還剩40天</p>
+                </div>
+            </div>
+            <div class="project-object">
+                <div class="image-container ">
+                    <img src="../images/product/chicken.jpg">
+                </div>
+                <div class="h-40">
+                    <a href="../main/content.php">
+                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
+                    </a>
+                </div>
+                <div class="horizon-between top-divider">
+                    <div class="horizon-items vertical-center">
+                        <b>NT$ 2,900,500</b>
+                        <p class="vertical-divider"> <b>300 %</b> </p>
+                    </div>
+                    <p>還剩40天</p>
+                </div>
+            </div>
+            <div class="project-object">
+                <div class="image-container ">
+                    <img src="../images/product/chicken.jpg">
+                </div>
+                <div class="h-40">
+                    <a href="../main/content.php">
+                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
+                    </a>
+                </div>
+                <div class="horizon-between top-divider">
+                    <div class="horizon-items vertical-center">
+                        <b>NT$ 2,900,500</b>
+                        <p class="vertical-divider"> <b>300 %</b> </p>
+                    </div>
+                    <p>還剩40天</p>
                 </div>
             </div>
         </div>

@@ -38,7 +38,9 @@
                     <input class="form-input" type="date" name="date" required><br>
                     <label>
                         <input  type="checkbox" name="remeber"> </input>
-                        同意我們的隱私政策<br>
+                        同意我們的
+                        <a href="./privacy.php">隱私政策</a>
+                        <br>
                     </label>
                     <label>
                         <input  type="checkbox" name="remeber"> </input>

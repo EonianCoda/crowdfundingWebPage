@@ -31,7 +31,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -113,7 +113,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -132,7 +132,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -151,7 +151,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -195,7 +195,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -214,7 +214,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -233,7 +233,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -277,7 +277,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -296,7 +296,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -315,7 +315,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -359,7 +359,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -378,7 +378,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
@@ -397,7 +397,7 @@
                         <div class="image-container h-80">
                             <img src="../images/product/robot.jpg""> </img>
                         </div>
-                        <a href="../main/content.html">   
+                        <a href="../main/content.php">   
                              <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
                         </a>
                     </div>
