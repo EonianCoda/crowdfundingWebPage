@@ -26,8 +26,8 @@
     </header>
 
     <?php
-        require_once('../backend/account.php');
-        require_once('../backend/alert.php');
+        if (!function_exists('login')) require_once("../backend/account.php");
+        if(!function_exists('alert_message')) require_once('../backend/alert.php');
         if(isset($_POST['username']) AND (isset($_POST['password'])))
         {
             $status_code = login($_POST);

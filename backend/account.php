@@ -127,12 +127,26 @@
     }
   }
 
-  function logout($key)
+  function logout()
   {
     session_start();
     if(isset($_SESSION['online_key']))
     {
-      unset($_SESSION['online_key']);
+      $conn = get_conn();
+      $sql = sprintf("SELECT id FROM auth WHERE auth_key = '%s'", $_SESSION['online_key']);
+      $r = mysqli_query($conn, $sql);
+
+      if(mysqli_num_rows($r) == 0)
+      {
+        mysqli_close($conn);
+        unset($_SESSION['online_key']);
+        return True;
+      }
+      //Delete the session in DB
+      $r = mysqli_fetch_row($r);
+      $sql = sprintf("DELETE FROM auth WHERE id = '%d'", $r[0]);
+      $r = mysqli_query($conn, $sql);
+      mysqli_close($conn);
     }
   }
 

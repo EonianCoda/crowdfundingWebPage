@@ -1,12 +1,21 @@
 <?php 
+    if (!function_exists('authentication')) require_once("../backend/account.php");
     $lo = false;
-    function login()
+    session_start();
+
+    if(isset($_SESSION['online_key']))
+    {
+        $user_id = authentication($_SESSION['online_key']);
+        //authentication success
+        if ($user_id != 0) $lo = true;
+    }
+    function online()
     {
         global $lo;
         if($lo == true)
         {
             echo "<li><a href='../member/setting.php'>會員中心</a></li>";
-            echo "<li><button class='logout' type='button'>登出</button></li>";
+            echo "<li><button class='logout' type='button' id='logout'>登出</button></li>";
         }
         else
         {
@@ -15,6 +24,29 @@
         }
     }
 ?>
+<script>
+    function addItem(form, name, value)
+    {
+        const hiddenField = document.createElement("input");
+        hiddenField.type = 'hidden';
+        hiddenField.name =  name;
+        hiddenField.value = value;
+        form.appendChild(hiddenField);
+    }
+	
+	$("#logout").on("click", function () 
+    { 
+        if (confirm("確定登出" + "?")) 
+        {
+            var form = document.createElement("form");
+		    form.setAttribute("action", '../backend/logout.php');
+		    form.setAttribute("method", "post");
+            document.body.appendChild(form);
+		    form.submit();
+		}
+	}
+	);
+</script>
 <header class="bottom-divider">
     <div class="container horizon-between">
         <nav class="vertical-center">
@@ -31,7 +63,7 @@
             </div>
         </nav>
         <nav class="horizon-center wrap vertical-center">
-           <?php login();?>
+           <?php online();?>
         </nav>
     </div>
 </header>

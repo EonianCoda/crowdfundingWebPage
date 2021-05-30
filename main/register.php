@@ -25,8 +25,8 @@
     <header class="headerpage">
     </header>
     <?php
-        require_once('../backend/account.php');
-        require_once('../backend/alert.php');
+        if (!function_exists('register')) require_once('../backend/account.php');
+        if (!function_exists('alert_message')) require_once('../backend/alert.php');
         if(isset($_POST['username']) AND (isset($_POST['password'])) AND (isset($_POST['realname'])) AND (isset($_POST['birthday'])) 
         AND isset($_POST['phone_number']) AND (isset($_POST['useremail'])))
         {
