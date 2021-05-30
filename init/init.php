@@ -1,24 +1,21 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "rootroot";
-    $DB_name = "data";
+    require_once("../backend/sql_info.php");
 
     function reset_DB()
     {
-        global $servername, $username, $password, $DB_name;
+        global $mysql_servername, $mysql_username, $mysql_password, $mysql_DB_name;
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password);
-        $sql = sprintf("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '%s'", $DB_name);
+        $conn = mysqli_connect($mysql_servername, $mysql_username, $mysql_password);
+        $sql = sprintf("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '%s'", $mysql_DB_name);
         $r = mysqli_query($conn, $sql);
         //Drop the same name DataBase 
         if(mysqli_num_rows($r) != 0)
         {
-            $sql = sprintf("DROP DATABASE %s", $DB_name);
+            $sql = sprintf("DROP DATABASE %s", $mysql_DB_name);
             mysqli_query($conn, $sql);
         }
 
-        $sql = sprintf("CREATE DATABASE %s", $DB_name);
+        $sql = sprintf("CREATE DATABASE %s", $mysql_DB_name);
         mysqli_query($conn, $sql);
         mysqli_close($conn);
         echo "重置資料庫成功" . '<br>';
@@ -27,7 +24,7 @@
     {
         $SQL_path = 'init_SQL';
 
-        global $servername, $username, $password, $DB_name;
+        global $mysql_servername, $mysql_username, $mysql_password, $mysql_DB_name;
         $SQL_files = scandir($SQL_path);
         if(!$SQL_files)
         {
@@ -36,9 +33,9 @@
         }
 
 
-        $mysql_info = sprintf("mysql:host=%s;dbname=%s", $servername, $DB_name);
+        $mysql_info = sprintf("mysql:host=%s;dbname=%s", $mysql_servername, $mysql_DB_name);
 
-        $db = new PDO($mysql_info, $username, $password);
+        $db = new PDO($mysql_info, $mysql_username, $mysql_password);
 
 
         for($i = 2; $i < count($SQL_files); $i+=1)

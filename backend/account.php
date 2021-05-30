@@ -1,4 +1,6 @@
 <?php
+  require_once("sql_info.php");
+
   //set time zone
   function gen_key()
   {
@@ -6,7 +8,8 @@
   }
   function get_conn()
   {
-    $conn = mysqli_connect("localhost","root","rootroot","data");
+    global $mysql_servername, $mysql_username, $mysql_password, $mysql_DB_name;
+    $conn = mysqli_connect($mysql_servername,$mysql_username,$mysql_password,$mysql_DB_name);
     return $conn;
   }
 
@@ -37,9 +40,9 @@
                   useremail, project) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')", 
                   $POST['username'], $hash, $POST['realname'], $POST['birthday'], $POST['phone_number'], 
                   $POST['useremail'], $empty_project);
+
     //$sql = "INSERT INTO members (username, password) VALUES('$username', '$hash')";
     $r = mysqli_query($conn, $sql);
-
     mysqli_close($conn);
     //unknow error
     if(!$r) return 2;
