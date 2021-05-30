@@ -26,7 +26,7 @@
     </header>    
     <div class="marquee-outer">
         <div class="horizon-center vertical-center w-80">
-            <a href="../main/content.html">
+            <a href="../main/content.php">
                 <p>剩下10天</p>
                 <h3>
                     Alexander AutoChess自走軍棋 - 滿足成為指揮官的快感
@@ -44,32 +44,32 @@
     
         <div class="horizon-between vertical-center text-center m-t-45">
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=design" class=" category-button"> 
+                <a href="./project.php?category=design" class=" category-button"> 
                     <img src="../images/categoryIcon/design.png" height="100" width="100"> </img>
                     <p>設計<p>
                 </a>
             </div>
 
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=music" class=" category-button"> 
+                <a href="./project.php?category=music" class=" category-button"> 
                     <img src="../images/categoryIcon/music.png" height="100" width="100"> </img>
                     <p>音樂<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=education" class=" category-button"> 
+                <a href="./project.php?category=education" class=" category-button"> 
                     <img src="../images/categoryIcon/edu.png" height="100" width="100"> </img>
                     <p>教育<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=technology" class=" category-button"> 
+                <a href="./project.php?category=technology" class=" category-button"> 
                     <img src="../images/categoryIcon/tech.png" height="100" width="100"> </img>
                     <p>科技<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.html?category=life" class=" category-button"> 
+                <a href="./project.php?category=life" class=" category-button"> 
                     <img src="../images/categoryIcon/life.png" height="100" width="100"> </img>
                     <p>生活<p>
                 </a>
@@ -87,7 +87,7 @@
                     <img src="../images/product/chicken.jpg">
                 </div>
                 <div class="h-40">
-                    <a href="../main/content.html">
+                    <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                     </a>
                 </div>
@@ -104,7 +104,7 @@
                     <img src="../images/product/chicken.jpg">
                 </div>
                 <div class="h-40">
-                    <a href="../main/content.html">
+                    <a href="../main/content.php">
                         <h3> [KMT] 韓寶 </h3>
                     </a>
                 </div>
@@ -121,7 +121,7 @@
                     <img src="../images/product/chicken.jpg">
                 </div>
                 <div class="h-40">
-                    <a href="../main/content.html">
+                    <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
@@ -138,7 +138,7 @@
                     <img src="../images/product/chicken.jpg">
                 </div>
                 <div class="h-40">
-                    <a href="../main/content.html">
+                    <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
@@ -155,7 +155,7 @@
                     <img src="../images/product/chicken.jpg">
                 </div>
                 <div class="h-40">
-                    <a href="../main/content.html">
+                    <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
@@ -172,7 +172,7 @@
                     <img src="../images/product/chicken.jpg">
                 </div>
                 <div class="h-40">
-                    <a href="../main/content.html">
+                    <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>

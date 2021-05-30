@@ -73,8 +73,8 @@
     <div>
         <div class="w-100 bg-block bottom-divider horizon-center">
             <div class="horizon-between w-50 p-t-20 p-b-20">
-                <a href="./content.html?q=content"> 專案內容</a>
-                <a href="./content.html?q=qa"> 常見問題</a>
+                <a href="./content.php?q=content"> 專案內容</a>
+                <a href="./content.php?q=qa"> 常見問題</a>
             </div>
         </div>
     </div>
