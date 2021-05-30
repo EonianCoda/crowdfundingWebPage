@@ -72,6 +72,7 @@
 }
 /*[ SIZE ]
 */
+.w-100p{width: 100px;}
 .h-10{height: 10%;}
 .h-20{height: 20%;}
 .h-30{height: 30%;}
@@ -794,6 +795,7 @@
 
 /* [MARGIN]
 */
+.m-t-0{margin-top: 0px;}
 .m-t-1 {margin-top: 1px;}
 .m-t-2 {margin-top: 2px;}
 .m-t-3 {margin-top: 3px;}

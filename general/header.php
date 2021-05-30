@@ -6,6 +6,7 @@
         if($lo == true)
         {
             echo "<li><a href='../member/setting.html'>會員中心</a></li>";
+            echo "<li><button class='logout' type='button'>登出</button></li>";
         }
         else
         {

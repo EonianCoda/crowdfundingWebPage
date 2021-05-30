@@ -31,7 +31,7 @@
             <div class="text-center vertical-items horizon-center w-20">
                 <h1>登入</h1>
                 <form method="POST">
-                    <input class="form-input" type="email" name="useremail" placeholder="電子信箱" required> <br>
+                    <input class="form-input" type="email" name="username" placeholder="帳號名稱" required> <br>
                     <input class="form-input" type="password" name="password" placeholder="密碼" required> <br>
                     <div class="vertical-center horizon-between m-t-10">
                         <label>
