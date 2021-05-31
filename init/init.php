@@ -103,7 +103,7 @@
             $data = fgetcsv($handle, 1000);
             
             $i = 1;
-            while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) 
+            while (($row = fgetcsv($handle, 1000)) !== FALSE) 
             {
                 $sql = sprintf("INSERT INTO `members` (`id`, `username`, `realname`, `password`, `birthday`, `phone_number`, `useremail`, `photo`, `project`) VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s','%s')",
                 $row[0],
@@ -118,7 +118,12 @@
                 );
 
                 $r = mysqli_query($conn, $sql);
-                if(!$r) echo "line" . $i. "失敗" . "<br>";
+                if(!$r)
+                {
+                    echo "line" . $i. "失敗" . "<br>";
+                }
+                
+               
                 else
                 {
                     echo "加入member:" . $row[1] . "成功<br>";
