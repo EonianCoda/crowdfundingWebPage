@@ -234,15 +234,15 @@ nav li a {
   border-radius: 6px;
   margin-top: 20px;
 }
-@media screen and (min-width:900px){
+@media screen and (min-width:1030px){
     body{
         font-size:20px;
     }
     .project-object{
-      max-width: 33%;
+      max-width: 50%;
     } 
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1030px) {
   body {
     font-size: 16px;
   }

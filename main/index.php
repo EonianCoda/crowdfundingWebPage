@@ -81,7 +81,7 @@
         <div class="vertical-center">
             <h1 class="quote">熱門項目</h1>
         </div>
-        <div class="horizon-between wrap">
+        <div class="horizon-items wrap">
             <div class="project-object">
                 <div class="image-container">
                     <img src="../images/product/chicken.jpg">
