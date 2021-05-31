@@ -26,7 +26,15 @@
     </header>
     <?php
         if (!function_exists('authentication')) require_once('../backend/account.php');
+        if (!function_exists('new_proposal')) require_once('../backend/project.php');
+        if (!function_exists('new_proposal_alert')) require_once('../backend/alert.php');
         only_for_members();
+
+        if(isset($_POST['name']))
+        {
+            $status_code = new_proposal();
+            new_proposal_alert($status_code);
+        }
     ?>
     <form method="POST" action="proposal.php" enctype="multipart/form-data">
         <div class="bottom-divider p-t-40 p-b-40 maxh-1000">
@@ -51,7 +59,7 @@
                     </div>
                     <div class="w-40 vertical-items h-100">
                         <div class="prop h-15">
-                            <input class ="form-input h-90" type="text" maxlength=20 placeholder= "募款名稱" required> </input>
+                            <input class ="form-input h-90" type="text" maxlength=20 placeholder= "募款名稱" name="name" required> </input>
                         </div>
                         <select class="mt-2 mb-3 prop p-l-20 h-10" 
                             name="category" >
@@ -64,7 +72,7 @@
                         </select>
 
                         <div class="prop h-30">
-                            <textarea type="text" placeholder="為你的專案簡短介紹" class="form-input h-90 p-t-15" name="intro" maxlength="200"></textarea>
+                            <textarea type="text" placeholder="為你的專案簡短介紹" class="form-input h-90 p-t-15" name="intro" maxlength="200" required></textarea>
                         </div>
                         <div class="horizon-items prop h-20 wrap">
                             <label class=" p-l-5">募款結束日期</label>
