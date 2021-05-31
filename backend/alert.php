@@ -63,4 +63,23 @@
                 break;
         } 
     }
+
+    function edit_profile_alert($status_code)
+    {
+        switch($status_code)
+        {
+            case 0:
+                alert_message("修改成功!");
+                break;
+            case 1:
+                alert_message("帳號名稱重複");
+                break;
+            case 2:
+                alert_message("圖片名稱過長(最多30字)");
+                break;
+            default:
+                alert_message("不明錯誤");
+                break;
+        } 
+    }
 ?>

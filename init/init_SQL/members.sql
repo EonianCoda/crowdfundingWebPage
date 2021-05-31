@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 30, 2021 at 06:07 PM
+-- Generation Time: May 31, 2021 at 08:12 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -36,7 +36,7 @@ CREATE TABLE `members` (
   `birthday` date NOT NULL,
   `phone_number` char(12) NOT NULL,
   `useremail` char(50) NOT NULL,
-  `photo` char(30) NOT NULL,
+  `photo` char(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `project` json NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -59,7 +59,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
