@@ -1,7 +1,7 @@
 <?php
     $mysql_servername = "localhost";
     $mysql_username = "root";
-    $mysql_password = "eidi8507";
+    $mysql_password = "rootroot";
     $mysql_DB_name = "data";
 
     function get_conn()
