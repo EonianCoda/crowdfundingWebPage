@@ -79,7 +79,7 @@
                 <div class="image-container">
                     <img src="../images/product/chicken.jpg">
                 </div>
-                <div class="h-40">
+                <div class="h-20">
                     <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                     </a>
@@ -97,7 +97,7 @@
                 <div class="image-container">
                     <img src="../images/product/chicken.jpg">
                 </div>
-                <div class="h-40">
+                <div class="h-20">
                     <a href="../main/content.php">
                         <h3> [KMT] 韓寶 </h3>
                     </a>
@@ -115,7 +115,7 @@
                 <div class="image-container ">
                     <img src="../images/product/chicken.jpg">
                 </div>
-                <div class="h-40">
+                <div class="h-20">
                     <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
@@ -133,7 +133,7 @@
                 <div class="image-container ">
                     <img src="../images/product/chicken.jpg">
                 </div>
-                <div class="h-40">
+                <div class="h-20">
                     <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
@@ -151,7 +151,7 @@
                 <div class="image-container ">
                     <img src="../images/product/chicken.jpg">
                 </div>
-                <div class="h-40">
+                <div class="h-20">
                     <a href="../main/content.php">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
