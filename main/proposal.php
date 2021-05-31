@@ -32,10 +32,9 @@
 		            <img src="" id="show" width="100%">
 		            <script type="text/javascript">
 			        $(function() {
-
                         $("#myfile").change(function() {
                         var readFile = new FileReader();
-                        var mfile = $("#myfile")[0].files[0];  //注意這裡必須時$("#myfile")[0]，document.getElementById('file')等價與$("#myfile")[0]
+                        var mfile = $("#myfile")[0].files[0]; 
                         readFile.readAsDataURL(mfile);
                         readFile.onload = function() {
                             var img = $("#show");

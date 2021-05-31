@@ -42,7 +42,7 @@
             <input class="form-input" type="password"  name="newpassword" placeholder="請輸入新密碼" value="" required> <br>
             再輸入新密碼:
             <input class="form-input" type="password"  name="newpassword2" placeholder="再輸入新密碼" value="" required> <br>
-            <button type="submit" >確定修改</button>
+            <button class="button w-100"type="submit" >確定修改</button>
         </form>
     </div>
 

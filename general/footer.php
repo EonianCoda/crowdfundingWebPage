@@ -6,7 +6,7 @@
         </div>
         <div class="container w-30">
             <h3>說明</h3>
-            <a href="./privacy.php">關於我們</a>
+            <a href="./privacy.php">隱私政策</a>
         </div>
         <div class="container w-30 vertlical-items">
             <h3>關於</h3>
