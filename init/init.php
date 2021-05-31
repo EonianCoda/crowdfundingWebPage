@@ -53,7 +53,90 @@
         }
         echo "初始化成功" . "<br>";
     }
-    
+    function addProject()
+{
+    $conn = get_conn();
+    if (($handle = fopen("project.csv", "r")) !== FALSE)
+    {
+        //ignore first three row
+        $data = fgetcsv($handle, 1000);
+        $data = fgetcsv($handle, 1000);
+        $data = fgetcsv($handle, 1000);
+        $i = 1;
+        while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) 
+        {
+            $sql = sprintf("INSERT INTO `project` (`id`, `name`, `category`, `goal_money`, `now_money`, `begin_date`, `end_date`, `main_img`, `info`, `organizer`, `sponsor_num`, `tracking_num`) VALUES (%d, '%s', '%s', '%d', '%d', '%s', '%s', '%s', '%s', '%d', '%d', '%d')",
+            $row[0],
+            $row[1],
+            $row[2],
+            $row[3],
+            $row[4],
+            $row[5],
+            $row[6],
+            $row[7],
+            $row[8],
+            $row[9],
+            $row[10],
+            $row[11]
+            );
+            $r = mysqli_query($conn, $sql);
+            if(!$r) echo "line" . $i. "失敗" . "<br>";
+            else
+            {
+                echo "加入project:" . $row[1] . "成功<br>";
+            }
+            $i++;
+        }
+        fclose($handle);
+    }
+    echo "加入project成功" . "<br>";
+}
+
+    function addmembers()
+    {
+        $conn = get_conn();
+        if (($handle = fopen("members.csv", "r")) !== FALSE)
+        {
+            //ignore first three row
+            $data = fgetcsv($handle, 1000);
+            $data = fgetcsv($handle, 1000);
+            $data = fgetcsv($handle, 1000);
+            
+            $i = 1;
+            while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) 
+            {
+                $sql = sprintf("INSERT INTO `members` (`id`, `username`, `realname`, `password`, `birthday`, `phone_number`, `useremail`, `photo`, `project`) VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s','%s')",
+                $row[0],
+                $row[1],
+                $row[2],
+                $row[3],
+                $row[4],
+                $row[5],
+                $row[6],
+                $row[7],
+                $row[8],
+                );
+
+                $r = mysqli_query($conn, $sql);
+                if(!$r) echo "line" . $i. "失敗" . "<br>";
+                else
+                {
+                    echo "加入member:" . $row[1] . "成功<br>";
+                }
+                $i++;
+            }
+            fclose($handle);
+    }
+    else
+    {
+        echo "找不到檔案". "<br>";
+        return;
+    }
+    echo "加入members成功!" . "<br>";
+    }
     reset_DB();
+
     set_tables();
+    addProject();
+    addmembers();
 ?>
