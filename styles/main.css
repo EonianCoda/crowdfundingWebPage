@@ -190,11 +190,13 @@ nav li a {
   margin: 0.4em;
   box-sizing: border-box;
   padding: 0.5em;
-  border: 1px solid #1d6a96;
+
   border-radius: 20px;
   vertical-align: middle;
 }
-
+.border{
+  border: 1px solid #1d6a96;
+}
 .textarea_input {
   width: 100%;
 }

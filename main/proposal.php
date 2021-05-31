@@ -39,7 +39,7 @@
     <form method="POST" action="proposal.php" enctype="multipart/form-data">
         <div class="bottom-divider p-t-40 p-b-40 maxh-1000">
                 <div class="container horizon-items h-32em" >
-                    <div class="w-60 m-r-30 horizon-center vertical-center prop">
+                    <div class="w-60 m-r-30 horizon-center vertical-center prop border">
                         <input id="myfile" type="file" name="main_img" required><br/>
                         <img class="maxh-1000"src="" id="show" width="100%">
                         <script type="text/javascript">
@@ -57,20 +57,21 @@
                         })
                         </script>
                     </div>
-                    <div class="w-40 vertical-items h-100">
+                    <div class="w-40 vertical-items h-100 ">
                         <div class="prop h-15">
                             <input class ="form-input h-90" type="text" maxlength=20 placeholder= "募款名稱" name="name" required> </input>
                         </div>
-                        <select class="mt-2 mb-3 prop p-l-20 h-10" 
-                            name="category" >
-                            <option selected>請選擇專案類別...</option>
-                            <option value=1> 設計 </option>
-                            <option value=2> 音樂 </option>
-                            <option value=3> 教育 </option>
-                            <option value=4> 科技 </option>
-                            <option value=5> 生活 </option>
-                        </select>
-
+                        <div class="prop h-10" >
+                            <select class="mt-2 mb-3 p-l-20 w-100 prop" 
+                                name="category" >
+                                <option selected>請選擇專案類別...</option>
+                                <option value=1> 設計 </option>
+                                <option value=2> 音樂 </option>
+                                <option value=3> 教育 </option>
+                                <option value=4> 科技 </option>
+                                <option value=5> 生活 </option>
+                            </select>
+                        </div>
                         <div class="prop h-30">
                             <textarea type="text" placeholder="為你的專案簡短介紹" class="form-input h-90 p-t-15" name="intro" maxlength="200" required></textarea>
                         </div>
@@ -81,7 +82,9 @@
                         <div class="horizon-items prop h-10">
                                 <input class="form-input h-90" type="text" name="goal_money" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="募款金額" required> <br>
                         </div>
-                        <button class="button h-10"> 完成表單</button>
+                        <div class="horizon-center prop h-10">
+                            <button class="button w-100"> 完成表單</button>
+                        </div>
                     </div>
                 </div>
             
@@ -96,20 +99,124 @@
                 </div>
             </div>
         </div>
-        <div class="container horizon-center m-t-20 ">
-            <div>
-                圖片1: <input type="file" name="intro_img1"accept="image/gif, image/jpeg, image/png"><br>
-                圖片2: <input type="file" name="intro_img2" accept="image/gif, image/jpeg, image/png"><br>
-                圖片3: <input type="file" name="intro_img3" accept="image/gif, image/jpeg, image/png"><br>
-                圖片4: <input type="file" name="intro_img4" accept="image/gif, image/jpeg, image/png"><br>
-                圖片5: <input type="file" name="intro_img5" accept="image/gif, image/jpeg, image/png"><br>
-                <br>
-                    <textarea type="text" class="form-input h-90p p-t-15" placeholder="詳細規格" name="content" maxlength="200"></textarea>
-                    <textarea type="text" class="form-input h-90p p-t-15" placeholder="聯絡資訊" name="contact" maxlength="200"></textarea>
+        <div class="container horizon-between m-t-20 ">
+            <div class="vertical-items horizon-center m-t-20 w-70">
+                <div class="m-t-30">
+                    <div class="prop horizon-center vertical-center border">
+                        <input id="myfile1" type="file" name="intro_img1" required><br/>
+                        <img class="maxh-1000"src="" id="show1" width="100%">
+                        <script type="text/javascript">
+                        $(function() {
+                            $("#myfile1").change(function() {
+                            var readFile = new FileReader();
+                            var mfile = $("#myfile1")[0].files[0]; 
+                            readFile.readAsDataURL(mfile);
+                            readFile.onload = function() {
+                                var img = $("#show1");
+                                img.attr("src", this.result);
+                            }
+                            });
+
+                        })
+                        </script>
+                    </div>
+                </div>
+                <div class="m-t-30">
+                    <div class="prop horizon-center vertical-center border">
+                        <input id="myfile2" type="file" name="intro_img2" required><br/>
+                        <img class="maxh-1000"src="" id="show2" width="100%">
+                        <script type="text/javascript">
+                        $(function() {
+                            $("#myfile2").change(function() {
+                            var readFile = new FileReader();
+                            var mfile = $("#myfile2")[0].files[0]; 
+                            readFile.readAsDataURL(mfile);
+                            readFile.onload = function() {
+                                var img = $("#show2");
+                                img.attr("src", this.result);
+                            }
+                            });
+
+                        })
+                        </script>
+                    </div>
+                </div>
+                <div class="m-t-30">
+                    <div class="prop horizon-center vertical-center border">
+                        <input id="myfile3" type="file" name="intro_img3" required><br/>
+                        <img class="maxh-1000"src="" id="show3" width="100%">
+                        <script type="text/javascript">
+                        $(function() {
+                            $("#myfile3").change(function() {
+                            var readFile = new FileReader();
+                            var mfile = $("#myfile3")[0].files[0]; 
+                            readFile.readAsDataURL(mfile);
+                            readFile.onload = function() {
+                                var img = $("#show3");
+                                img.attr("src", this.result);
+                            }
+                            });
+
+                        })
+                        </script>
+                    </div>
+                </div>
+                <div class="m-t-30">
+                    <div class="prop horizon-center vertical-center border">
+                        <input id="myfile4" type="file" name="intro_img4" required><br/>
+                        <img class="maxh-1000"src="" id="show4" width="100%">
+                        <script type="text/javascript">
+                        $(function() {
+                            $("#myfile4").change(function() {
+                            var readFile = new FileReader();
+                            var mfile = $("#myfile4")[0].files[0]; 
+                            readFile.readAsDataURL(mfile);
+                            readFile.onload = function() {
+                                var img = $("#show4");
+                                img.attr("src", this.result);
+                            }
+                            });
+
+                        })
+                        </script>
+                    </div>
+                </div>
+                <div class="m-t-30">
+                    <div class="prop horizon-center vertical-center border">
+                        <input id="myfile5" type="file" name="intro_img5" required><br/>
+                        <img class="maxh-1000"src="" id="show5" width="100%">
+                        <script type="text/javascript">
+                        $(function() {
+                            $("#myfile5").change(function() {
+                            var readFile = new FileReader();
+                            var mfile = $("#myfile5")[0].files[0]; 
+                            readFile.readAsDataURL(mfile);
+                            readFile.onload = function() {
+                                var img = $("#show5");
+                                img.attr("src", this.result);
+                            }
+                            });
+
+                        })
+                        </script>
+                    </div>
+                </div>
+                <div class="horizon-between m-r-30">
+                    <div class="w-40">
+                        <h2>詳細規格</h2>
+                        <div class="w-100 h-200p">
+                        <textarea type="text" class="form-input h-90p p-t-15" placeholder="詳細規格" name="content" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                    <div class="w-40">
+                        <h2>聯絡資訊</h2>
+                        <div class="w-100 h-200p">
+                        <textarea type="text" class="form-input h-90p p-t-15" placeholder="聯絡資訊" name="contact" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
         </div>
-        
     </form>
     <footer class="footerpage">
     </footer>
