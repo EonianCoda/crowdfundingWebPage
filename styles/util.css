@@ -4,10 +4,11 @@
   box-shadow: 2px #c7c7c7;
   border-radius: 7px;
   height: 40px;
-  width: 100%;
+  width: 99%;
   padding: 0px 18px 0px 18px;
   margin: 5px;
   font-size: 13px;
+  vertical-align: middle;
 }
 
 .form-input:focus {

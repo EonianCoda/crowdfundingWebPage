@@ -72,10 +72,20 @@
 .wrap{
     flex-wrap: wrap;
 }
+.maxh-1000{
+    max-height: 1000px;
+}
+.minh-800{
+    min-height: 800px;
+}
+.h-32em{
+    height: 32em;
+}
 /*[ SIZE ]
 */
 .w-100p{width: 100px;}
 .h-10{height: 10%;}
+.h-15{height: 15%;}
 .h-20{height: 20%;}
 .h-30{height: 30%;}
 .h-40{height: 40%;}

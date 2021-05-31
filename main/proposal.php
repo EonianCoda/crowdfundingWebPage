@@ -29,11 +29,11 @@
         only_for_members();
     ?>
     <form method="POST" action="proposal.php" enctype="multipart/form-data">
-        <section class="bottom-divider p-t-40 p-b-40">
-                <div class="container horizon-items" >
+        <div class="bottom-divider p-t-40 p-b-40 maxh-1000">
+                <div class="container horizon-items h-32em" >
                     <div class="w-60 m-r-30 horizon-center vertical-center prop">
                         <input id="myfile" type="file" name="main_img" required><br/>
-                        <img src="" id="show" width="100%">
+                        <img class="maxh-1000"src="" id="show" width="100%">
                         <script type="text/javascript">
                         $(function() {
                             $("#myfile").change(function() {
@@ -47,13 +47,13 @@
                             });
 
                         })
-                </script>
+                        </script>
                     </div>
-                    <div class="w-40 vertical-items">
-                        <div class="prop">
-                            <input class ="form-input" type="text" maxlength=20 placeholder= "募款名稱" required> </input>
+                    <div class="w-40 vertical-items h-100">
+                        <div class="prop h-15">
+                            <input class ="form-input h-90" type="text" maxlength=20 placeholder= "募款名稱" required> </input>
                         </div>
-                        <select class="mt-2 mb-3" 
+                        <select class="mt-2 mb-3 prop p-l-20 h-10" 
                             name="category" >
                             <option selected>請選擇專案類別...</option>
                             <option value=1> 設計 </option>
@@ -63,27 +63,21 @@
                             <option value=5> 生活 </option>
                         </select>
 
-                        <div class="prop">
-                            <p class="vertical-divider-thick">
-                                <label> 為你的專案簡短介紹
-                                    <textarea class="textarea_input" name="intro">
-                                    </textarea>
-                                </label>
-                            </p>
+                        <div class="prop h-30">
+                            <textarea type="text" placeholder="為你的專案簡短介紹" class="form-input h-90 p-t-15" name="intro" maxlength="200"></textarea>
                         </div>
-                        <div class="horizon-items prop">
-                            <label>募款結束日期
-                                <input class="form-input" type="date" name="end_date" placeholder="提案人" required> <br>
-                            </label>
+                        <div class="horizon-items prop h-20 wrap">
+                            <label class=" p-l-5">募款結束日期</label>
+                                <input class="form-input h-50" type="date" name="end_date" required> <br>
                         </div>
-                        <div class="horizon-items prop">
-                                <input class="form-input" type="text" name="goal_money" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="募款金額" required> <br>
+                        <div class="horizon-items prop h-10">
+                                <input class="form-input h-90" type="text" name="goal_money" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="募款金額" required> <br>
                         </div>
-                        <button class="button"> 完成表單</button>
+                        <button class="button h-10"> 完成表單</button>
                     </div>
                 </div>
             
-        </section>
+        </div>
 
 
         <div>
@@ -102,15 +96,8 @@
                 圖片4: <input type="file" name="intro_img4" accept="image/gif, image/jpeg, image/png"><br>
                 圖片5: <input type="file" name="intro_img5" accept="image/gif, image/jpeg, image/png"><br>
                 <br>
-                <label> 產品的詳細內容
-                    <textarea class="textarea_input" name="content">
-                    </textarea>
-                </label>
-                
-                <label>聯絡方式
-                    <textarea class="textarea_input" name="contact">
-                    </textarea>
-                </label>
+                    <textarea type="text" class="form-input h-90p p-t-15" placeholder="詳細規格" name="content" maxlength="200"></textarea>
+                    <textarea type="text" class="form-input h-90p p-t-15" placeholder="聯絡資訊" name="contact" maxlength="200"></textarea>
             </div>
             
         </div>
