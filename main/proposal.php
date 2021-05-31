@@ -28,11 +28,11 @@
         if (!function_exists('authentication')) require_once('../backend/account.php');
         only_for_members();
     ?>
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" action="proposal.php" enctype="multipart/form-data">
         <section class="bottom-divider p-t-40 p-b-40">
                 <div class="container horizon-items" >
                     <div class="w-60 m-r-30 horizon-center vertical-center prop">
-                        <input id="myfile" type="file" ><br/>
+                        <input id="myfile" type="file" name="main_img" required><br/>
                         <img src="" id="show" width="100%">
                         <script type="text/javascript">
                         $(function() {
@@ -51,11 +51,18 @@
                     </div>
                     <div class="w-40 vertical-items">
                         <div class="prop">
-                            <label>這裡填入你的募款名稱
-                                <textarea class="textarea_input" name="name">
-                                </textarea>
-                            </label>
+                            <input class ="form-input" type="text" maxlength=20 placeholder= "募款名稱" required> </input>
                         </div>
+                        <select class="mt-2 mb-3" 
+                            name="category" >
+                            <option selected>請選擇專案類別...</option>
+                            <option value=1> 設計 </option>
+                            <option value=2> 音樂 </option>
+                            <option value=3> 教育 </option>
+                            <option value=4> 科技 </option>
+                            <option value=5> 生活 </option>
+                        </select>
+
                         <div class="prop">
                             <p class="vertical-divider-thick">
                                 <label> 為你的專案簡短介紹
@@ -95,10 +102,15 @@
                 圖片4: <input type="file" name="intro_img4" accept="image/gif, image/jpeg, image/png"><br>
                 圖片5: <input type="file" name="intro_img5" accept="image/gif, image/jpeg, image/png"><br>
                 <br>
-                <textarea class="textarea_input" name="content">產品的詳細內容
-                </textarea>
-                <textarea class="textarea_input" name="contact">聯絡方式
-                </textarea>
+                <label> 產品的詳細內容
+                    <textarea class="textarea_input" name="content">
+                    </textarea>
+                </label>
+                
+                <label>聯絡方式
+                    <textarea class="textarea_input" name="contact">
+                    </textarea>
+                </label>
             </div>
             
         </div>
