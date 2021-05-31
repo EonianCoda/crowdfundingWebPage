@@ -1,4 +1,6 @@
 說明,,,儲存的結果經hash加密,,,,會員頭像,"為json格式，共有三個key：""watch_list""(關注清單),""my_proposal""(我的提案),""follow""(按讚)，都是儲存專案id"
 長度限制,20,10,?,無,12,50,30,無
 ID,username,realname,password,birthday,phone_number,useremail,photo,project
-1,Alien,Haha,$2y$10$s5ruvpTgS8ynU073aAWRjus9ch8/0jqwH.a5T3V7YFNlYfrNfE42K,2021-05-31,0923651952,haha@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": []}"
+1,Alien,Haha,$2y$10$s5ruvpTgS8ynU073aAWRjus9ch8/0jqwH.a5T3V7YFNlYfrNfE42K,2050-10-30,0923651952,haha@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": []}"
+2,chenghan0516,吳承翰,$2y$10$zso8NwFEJQ6/YUR21LzfvuuPNLY0atiK0y8gkamADz9xCPLGIHKO2,2021-05-16,0952223201,chenghan0516@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": []}"
+3,Ming,咕嘰咕嘰,$2y$10$1CG85d86b4oNmIbYokJ3xex1ETxnaZyZ/B9f6KDloT5rQTiZu7Oh6,2021-05-31,0905278405,haha@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": []}"
