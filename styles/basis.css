@@ -38,7 +38,9 @@
 {
     text-align: center;
 }
-
+.space{
+    justify-content: space-between;
+}
 .horizon-between
 {
     display: flex;

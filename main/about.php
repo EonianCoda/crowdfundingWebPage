@@ -35,29 +35,34 @@
                 <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
             </div>
         </div>
-        <div class="horizon-between">
-            <div class="w-50 m-r-50">
-                
-                <div class="w-100 h-70">
-                    <img src="../images/aboutus/supporter.jpg" width="100%" height="100%"> <img>
-                </div>
-                <div class="vertical-items text-center vertical-center horizon-center">
-                    <h2>對於支持者</h2>
-                    <br>
-                    <p>Achieve提供一個平台，讓人們看到他人提出的各種想法，對有興趣的項目提供實質上的幫助<p>
-                </div>
+        <div class="horizon-between vertical-center m-b-50 " >
+            <div class="w-20 h-30">
+                <img src="../images/founder/Ming.jpg" width="96%" height="100%"> <img>
             </div>
-
-            <div class="w-50">
-                <div class="w-100 h-70">
-                    <img src="../images/aboutus/dreamer.jpg" width="100%" height="100%"> <img>
-                </div>
-                <div class="vertical-items text-center vertical-center horizon-center">
-                    <h2>對於發起計畫者</h2>
-                    <br>
-                    <p>Achieve提供一個平台，讓具有各種新奇想像、但缺乏實現能力的人們可以發表想法，以尋求他人的支持，並藉此完成夢想<p>
-                </div>
-                
+            <div class="w-50 vertical-items text-center vertical-center horizon-center">
+                <h1> Make Dream Come True </h1>
+                <br>
+                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
+            </div>
+        </div>
+        <div class="horizon-between vertical-center m-b-50 " >
+            <div class="w-20 h-30">
+                <img src="../images/founder/Alien.JPG" width="96%" height="100%"> <img>
+            </div>
+            <div class="w-50 vertical-items text-center vertical-center horizon-center">
+                <h1> Make Dream Come True </h1>
+                <br>
+                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
+            </div>
+        </div>
+        <div class="horizon-between vertical-center m-b-50 " >
+            <div class="w-20 h-30">
+                <img src="../images/founder/Wacky.jfif" width="96%" height="100%"> <img>
+            </div>
+            <div class="w-50 vertical-items text-center vertical-center horizon-center">
+                <h1> Make Dream Come True </h1>
+                <br>
+                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
             </div>
         </div>
     </div>
