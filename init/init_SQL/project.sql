@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 31, 2021 at 08:12 AM
+-- Generation Time: May 31, 2021 at 02:03 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -25,19 +25,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `members`
+-- Table structure for table `project`
 --
 
-CREATE TABLE `members` (
-  `id` int(5) NOT NULL,
-  `username` char(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `realname` char(10) NOT NULL,
-  `password` char(70) NOT NULL,
-  `birthday` date NOT NULL,
-  `phone_number` char(12) NOT NULL,
-  `useremail` char(50) NOT NULL,
-  `photo` char(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `project` json NOT NULL
+CREATE TABLE `project` (
+  `id` int(11) NOT NULL,
+  `name` char(20) NOT NULL,
+  `category` char(2) NOT NULL,
+  `goal_money` int(11) NOT NULL,
+  `now_money` int(11) NOT NULL DEFAULT '0',
+  `begin_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `end_date` timestamp NOT NULL,
+  `main_img` char(35) NOT NULL,
+  `info` json NOT NULL,
+  `organizer` int(11) NOT NULL,
+  `sponsor_num` int(11) NOT NULL DEFAULT '0',
+  `tracking_num` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -45,21 +48,21 @@ CREATE TABLE `members` (
 --
 
 --
--- Indexes for table `members`
+-- Indexes for table `project`
 --
-ALTER TABLE `members`
+ALTER TABLE `project`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `account_name` (`username`);
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `members`
+-- AUTO_INCREMENT for table `project`
 --
-ALTER TABLE `members`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `project`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

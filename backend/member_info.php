@@ -33,6 +33,59 @@ Returns:
     return 0;
   }
 
+
+  /*Returns:
+      0: edit success
+      1: username has already defined
+      2: the length of photo is too long
+      3: unknow error
+  */
+  function edit_profile($POST, $FILES)
+  {
+      session_start();
+      if(!isset($_SESSION['online_key'])) return NULL;
+      $user_id = authentication($_SESSION['online_key']);
+      $conn = get_conn();
+      
+      $sql = sprintf("SELECT id FROM members WHERE username = '%s' and id != '%d'", $POST['username'], $user_id);
+      $r = mysqli_query($conn, $sql);
+      if(mysqli_num_rows($r) != 0) return 1;
+      
+
+      $sql = "SELECT photo FROM members WHERE id = $user_id";
+      $r = mysqli_query($conn, $sql);
+      $origin_img = mysqli_fetch_row($r)[0];
+
+      $POST['photo'] = $FILES['photo']['name'];
+      
+      //default photo
+      if($POST['photo'] == "") $POST['photo'] = $origin_img;
+      if(strlen($POST['photo']) >= 35) return 2;
+      $sql = sprintf("UPDATE members SET username = '%s', realname = '%s', useremail = '%s',phone_number = '%s',photo = '%s' WHERE id = $user_id",
+              $POST['username'],
+              $POST['realname'],
+              $POST['useremail'],
+              $POST['phone_number'],
+              $POST['photo']
+              );
+      $r = mysqli_query($conn, $sql);
+      //unknow error
+      if(!$r) return 3;
+
+      //move picture
+      if($FILES['photo']['name'] != "")
+      {
+        $file_get = $FILES['photo']['name'];
+        $temp = $FILES['photo']['tmp_name'];
+        $file_path = sprintf('../images/members/%s/', $POST['username']);
+        if (!file_exists($file_path)) mkdir($file_path);
+        if($origin_img != "None") unlink($file_path . $origin_img);
+        $file_to_saved = $file_path . $file_get;
+        //echo $file_to_saved;
+        move_uploaded_file($temp, $file_to_saved);
+      }
+      return 0;
+  }
   function get_personal_info()
   {
       session_start();

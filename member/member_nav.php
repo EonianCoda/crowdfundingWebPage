@@ -9,3 +9,8 @@
         </ul>
     </nav>
 </div>
+
+<?php
+    if (!function_exists('authentication')) require_once('../backend/account.php');
+    only_for_members();
+?>

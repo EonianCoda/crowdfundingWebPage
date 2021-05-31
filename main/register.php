@@ -40,12 +40,12 @@
             <div class="vertical-items">
                 <h1 class="text-center">註冊</h1>
                 <form method="POST">
-                    <input class="form-input" type="text"  name="username" placeholder="名稱" required> <br>
-                    <input class="form-input" type="text"  name="realname" placeholder="真實名稱" required> <br>
-                    <input class="form-input" type="email" name="useremail" placeholder="註冊信箱" required> <br>
-                    <input class="form-input" type="password" name="password" placeholder="密碼" required> <br>
-                    <input class="form-input" type="password" name="confirmedpassword" placeholder="密碼確定" required> <br>
-                    <input class="form-input" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" name="phone_number" placeholder="手機" required><br>
+                    <input class="form-input" type="text"  name="username" placeholder="名稱" maxlength="20" required> <br>
+                    <input class="form-input" type="text"  name="realname" placeholder="真實名稱" maxlength="10" required> <br>
+                    <input class="form-input" type="email" name="useremail" placeholder="註冊信箱" maxlength="50" required> <br>
+                    <input class="form-input" type="password" name="password" placeholder="密碼" maxlength="20" required> <br>
+                    <input class="form-input" type="password" name="confirmedpassword" placeholder="密碼確定" maxlength="20" required> <br>
+                    <input class="form-input" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" name="phone_number" maxlength="12" placeholder="手機" required><br>
                     <input class="form-input" type="date" name="birthday" required><br>
                     <label>
                         <input  type="checkbox" name="remeber"> </input>
