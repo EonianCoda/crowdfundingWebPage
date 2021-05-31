@@ -73,8 +73,8 @@
         </div>
     </div>
 
-    <section class="container m-t-25">
-    <div class="horizon-between wrap">
+    <section class="container m-t-25 horizon-center">
+    <div class="horizon-items wrap m0">
             <div class="project-object">
                 <div class="image-container">
                     <img src="../images/product/chicken.jpg">
@@ -165,24 +165,7 @@
                     <p>還剩40天</p>
                 </div>
             </div>
-            <div class="project-object">
-                <div class="image-container ">
-                    <img src="../images/product/chicken.jpg">
-                </div>
-                <div class="h-40">
-                    <a href="../main/content.php">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
-                    </a>
-                </div>
-                <button type="button" class="button m-b-10">+關注</button>
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> <b>300 %</b> </p>
-                    </div>
-                    <p>還剩40天</p>
-                </div>
-            </div>
+           
         </div>
 
     </section>

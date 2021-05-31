@@ -49,7 +49,7 @@
 .horizon-around
 {
     display: flex;
-    justify-content: space-a;
+    justify-content: space-around;
 }
 .horizon-center
 {
