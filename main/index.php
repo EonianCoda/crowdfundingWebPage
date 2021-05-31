@@ -91,6 +91,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -108,6 +109,7 @@
                         <h3> [KMT] 韓寶 </h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -125,6 +127,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -142,6 +145,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -159,6 +163,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -176,6 +181,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>

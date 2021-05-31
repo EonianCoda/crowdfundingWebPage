@@ -46,7 +46,11 @@
     display: flex;
     justify-content: space-between;
 }
-
+.horizon-around
+{
+    display: flex;
+    justify-content: space-a;
+}
 .horizon-center
 {
     display: flex;
@@ -88,6 +92,7 @@
 .h-15{height: 15%;}
 .h-20{height: 20%;}
 .h-30{height: 30%;}
+.h-35{height: 35%;}
 .h-40{height: 40%;}
 .h-50{height: 50%;}
 .h-60{height: 60%;}
@@ -102,6 +107,7 @@
 .w-40{width: 40%;}
 .w-50{width: 50%;}
 .w-60{width: 60%;}
+.w-65{width: 65%;}
 .w-70{width: 70%;}
 .w-80{width: 80%;}
 .w-90{width: 90%;}

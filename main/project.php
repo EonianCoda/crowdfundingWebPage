@@ -1,3 +1,14 @@
+<?php
+    function getcat($category){
+        if($category===$_GET['category']){
+            echo 'category-button-selected';
+        }
+        else{
+            echo 'category-button';
+        }
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
@@ -29,32 +40,32 @@
         <h1>專案類別</h1>
         <div class="horizon-between vertical-center text-center m-t-45">
             <div class="vertical-items fg-1">
-                <a href="./project.php?category=design" class="category-button-selected"> 
+                <a href="./project.php?category=design" class="<?php getcat('design')?>"> 
                     <img src="../images/categoryIcon/design.png" height="100" width="100"> </img>
                     <p>設計<p>
                 </a>
             </div>
 
             <div class="vertical-items fg-1">
-                <a href="./project.php?category=music" class="category-button"> 
+                <a href="./project.php?category=music" class="<?php getcat('music')?>"> 
                     <img src="../images/categoryIcon/music.png" height="100" width="100"> </img>
                     <p>音樂<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.php?category=education" class="category-button"> 
+                <a href="./project.php?category=education" class="<?php getcat('education')?>"> 
                     <img src="../images/categoryIcon/edu.png" height="100" width="100"> </img>
                     <p>教育<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.php?category=technology" class="category-button"> 
+                <a href="./project.php?category=technology" class="<?php getcat('technology')?>"> 
                     <img src="../images/categoryIcon/tech.png" height="100" width="100"> </img>
                     <p>科技<p>
                 </a>
             </div>
             <div class="vertical-items fg-1">
-                <a href="./project.php?category=life" class="category-button"> 
+                <a href="./project.php?category=life" class="<?php getcat('life')?>"> 
                     <img src="../images/categoryIcon/life.png" height="100" width="100"> </img>
                     <p>生活<p>
                 </a>
@@ -73,6 +84,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -90,6 +102,7 @@
                         <h3> [KMT] 韓寶 </h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -107,6 +120,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -124,6 +138,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -141,6 +156,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
@@ -158,6 +174,7 @@
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
                     </a>
                 </div>
+                <button type="button" class="button m-b-10">+關注</button>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,900,500</b>
