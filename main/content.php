@@ -106,9 +106,12 @@
                 <div class="h-30">
                     <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                 </div>
+                <div class="h-15">
+                    <p>純做善事，不求回饋</p>
+                </div>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900</b>
+                        <b>NT$ 100</b>
                     </div>
                     <p>還剩40天</p>
                 </div>
@@ -121,9 +124,12 @@
                 <div class="h-30">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                 </div>
+                <div class="h-15">
+                    <p>純做善事，不求回饋</p>
+                </div>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900</b>
+                        <b>NT$ 500</b>
                     </div>
                     <p>還剩40天</p>
                 </div>
@@ -136,13 +142,16 @@
                 <div class="h-30">
                         <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
                 </div>
+                <div class="h-15">
+                    <p>純做善事，不求回饋</p>
+                </div>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900</b>
+                        <b>NT$ 2,000</b>
                     </div>
                     <p>還剩40天</p>
                 </div>
-                <button class="button h-20"> 贊助專案</button>
+                <button class="button"> 贊助專案</button>
             </div>
         </div>
         
