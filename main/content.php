@@ -24,32 +24,53 @@
 <body>
     <header class="headerpage">
     </header>
+
+    <?php
+        if(!function_exists('get_info')) require_once('../backend/project.php');
+
+        function not_find_proj()
+        {
+            echo "<script type='text/javascript'>";
+            echo sprintf("alert('%s');", "無此專案!");
+            echo "window.location.href= '../main/index.php'";
+            echo "</script>";
+        }
+        if(!isset($_GET['id']))
+        {
+            not_find_proj();
+        }
+        else
+        {
+            $result = get_info($_GET['id']);
+            if(!$result) not_find_proj();
+        }
+    ?>
     <section class="bottom-divider p-t-40 p-b-40">
         <div class="container horizon-items">
             <div class="w-60 m-r-30">
-                <img src="../images/product/robot.jpg" height="100%" width="100%"> </img>
+                
+                <img src=  "<?php echo $result['main_img']; ?>" height="100%" width="100%"> </img>
             </div>
             <div class="w-40 vertical-items">
                 <div>
-                    <h1> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h1>
-                    <p class="vertical-divider-thick">  對於智能語音，我們不能不去想，卻也不能走火入魔。在人生的歷程中，
-                        智能語音的出現是必然的。世界上若沒有智能語音，對於人類的改變可想而知。</p>
+                    <h1> <?php echo $result['name']; ?> </h1>
+                    <p class="vertical-divider-thick"> <?php echo $result['info']['intro']; ?></p>
                 </div>
                 <div class="horizon-items">
                     <p>提案人：<p>
-                    <a href="#"> Dongshan Duck Head</a>
+                    <a href="#"> <?php echo $result['organizer']; ?> </a>
                 </div>
                 <div class="horizon-between vertical-center bottom-divider">
                     <div class="horizon-items vertical-center">
-                        <h3> NT$34,281</h3>
-                        <p class="vertical-divider"> <b>20 %</b> </p>
+                        <h3> <?php echo $result['now_money']; ?></h3>
+                        <p class="vertical-divider"> <b><?php echo $result['ratio']; ?></b> </p>
                     </div>
-                    <p> 5位贊助者</p>
+                    <p> <?php echo $result['sponsor_num']; ?> 位贊助者</p>
                 </div>
                 
                 <div class="prompt">
-                    <p> <b>剩餘天數</b> &nbsp;&nbsp; 10天 </p>
-                    <p> <b>時程</b> &nbsp;&nbsp; 2021/04/11 12:00 – 2021/04/21 02:00 </p>
+                    <p> <b>剩餘天數</b> &nbsp;&nbsp; <?php echo $result['remain_day']; ?>天 </p>
+                    <p> <b>時程</b> &nbsp;&nbsp; <?php echo $result['begin_date']; ?> – <?php echo $result['end_date']; ?> </p>
                 </div>
             </div>
         </div>
@@ -66,32 +87,31 @@
     </div>
     <div class="container horizon-between m-t-20 ">
         <div class="vertical-items horizon-center m-t-20 w-65">
-            <div class="m-r-30 m-t-30">
-                <img src="../images/product/robot.jpg" height="100%" width="100%"> </img>
-            </div>
-            <div class="m-r-30 m-t-30">
-                <img src="../images/product/robot.jpg" height="100%" width="100%"> </img>
-            </div>
-            <div class="m-r-30 m-t-30">
-                <img src="../images/product/robot.jpg" height="100%" width="100%"> </img>
-            </div>
-            <div class="m-r-30 m-t-30">
-                <img src="../images/product/robot.jpg" height="100%" width="100%"> </img>
-            </div>
-            <div class="m-r-30 m-t-30">
-                <img src="../images/product/robot.jpg" height="100%" width="100%"> </img>
-            </div>
+
+            <?php 
+            foreach($result['info']['intro_img'] as $img)
+            {
+                if($img != "")
+                {
+                    echo '<div class="m-r-30 m-t-30">';
+                    echo sprintf('<img src="%s" height="100%" width="100%"> </img>', $img);
+                    echo ' </div>';
+                    
+                }
+            }
+            ?>
+
             <div class="horizon-between m-r-30">
                 <div class="w-40">
                     <h2>詳細規格</h2>
                     <div class="w-100 form-input h-200p">
-                        <p>askdjal;ksjd;lasjsdkl;asdka;lsdk;lads</p>
+                        <p> <?php echo $result['info']['content']; ?> </p>
                     </div>
                 </div>
                 <div class="w-40">
                     <h2>聯絡資訊</h2>
                     <div class="w-100 form-input h-200p">
-                        <p>askdjal;ksjd;lasjd;l;lasdkl;asdka;lsdk;lads</p>
+                        <p>  <?php echo $result['info']['contact']; ?> </p>
                     </div>
                 </div>
             </div>
@@ -101,10 +121,10 @@
 
             <div class="getmoney">
                 <div class="image-container">
-                    <img src="../images/product/chicken.jpg">
+                    <img src="<?php echo $result['main_img']; ?>">
                 </div>
                 <div class="h-30">
-                    <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
+                    <h3>  <?php echo $result['name']; ?> </h3>
                 </div>
                 <div class="h-15">
                     <p>純做善事，不求回饋</p>
@@ -113,16 +133,16 @@
                     <div class="horizon-items vertical-center">
                         <b>NT$ 100</b>
                     </div>
-                    <p>還剩40天</p>
+                    <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
                 <button class="button"> 贊助專案</button>
             </div>
             <div class="getmoney">
                 <div class="image-container">
-                    <img src="../images/product/chicken.jpg">
+                    <img src="<?php echo $result['main_img']; ?>">
                 </div>
                 <div class="h-30">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
+                        <h3> <?php echo $result['name']; ?></h3>
                 </div>
                 <div class="h-15">
                     <p>純做善事，不求回饋</p>
@@ -131,16 +151,16 @@
                     <div class="horizon-items vertical-center">
                         <b>NT$ 500</b>
                     </div>
-                    <p>還剩40天</p>
+                    <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
                 <button class="button"> 贊助專案</button>
             </div>
             <div class="getmoney">
                 <div class="image-container">
-                    <img src="../images/product/chicken.jpg">
+                    <img src="<?php echo $result['main_img']; ?>">
                 </div>
                 <div class="h-30">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
+                        <h3> <?php echo $result['name']; ?></h3>
                 </div>
                 <div class="h-15">
                     <p>純做善事，不求回饋</p>
@@ -149,7 +169,7 @@
                     <div class="horizon-items vertical-center">
                         <b>NT$ 2,000</b>
                     </div>
-                    <p>還剩40天</p>
+                    <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
                 <button class="button"> 贊助專案</button>
             </div>

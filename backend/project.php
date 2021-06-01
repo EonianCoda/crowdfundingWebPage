@@ -3,6 +3,35 @@
     $max_imgname_len = 35;
 
 
+
+    function gen_money_str($money)
+    {
+        $money = intval($money);
+        $money_str = "";
+        $money_str = $money_str . ($money % 1000);
+        $money = intval($money / 1000);
+        while($money > 0)
+        {
+            $money_str = ($money % 1000) . ',' . $money_str;
+            $money = intval($money / 1000);
+            break;
+        }
+        $money_str = "NT$ " . $money_str;
+        return $money_str;
+    }
+
+    function cal_remain_day($end_date)
+    {
+        date_default_timezone_set('Asia/Taipei');
+        //calculate the remaining day
+        $now_time = date("Y-m-d H:i:s");
+        $now_time = new DateTime($now_time, new DateTimeZone('Asia/Taipei'));
+        $end_date = new DateTime($end_date, new DateTimeZone('Asia/Taipei'));
+        $diff = date_diff($end_date, $now_time);
+        $diff = $diff->format('%a');
+        if(intval($diff) == 0) $diff = 1;
+        return $diff;
+    }
     function change_img_name($old_name, $new_name)
     {
         $pos = strpos($old_name, ".");
@@ -120,6 +149,65 @@
 
         mysqli_close($conn);
     }
+
+    /*Returns:
+        NULL: no this id
+    */
+    function get_info($id)
+    {
+        $conn = get_conn();
+        $sql = sprintf("SELECT id,name,main_img,goal_money,now_money,begin_date, end_date,info,organizer,sponsor_num,tracking_num FROM project WHERE id = %s", $id);
+        $r = mysqli_query($conn, $sql);
+
+        $result = array(
+            "name" => "",
+            "main_img" => "",
+            "now_money"   => "",
+            "ratio"   => -"",
+            "remain_day"  => "",
+            "begin_date" => "",
+            "end_date" => "",
+            "sponsor_num" => "",
+            "tracking_num" => "",
+            "organizer" => ""
+        );
+        
+        if(!$r) return NULL;
+        $row = mysqli_fetch_row($r);
+        
+        $result['name'] = $row[1];
+        $result['main_img'] = sprintf("../images/project/%d/%s", $row[0], $row[2]);
+        //calculate the money
+        $result['now_money'] = gen_money_str($row[4]);
+        $result['ratio'] = intval((floatval($row[4]) / floatval($row[3])) * 100) . '%';
+        //calculate the remaining day
+        $result['remain_day'] = cal_remain_day($row[6]);
+        $result['begin_date'] = $row[5];
+        $result['end_date'] = $row[6];
+        $result['sponsor_num'] = $row[9];
+        $result['tracking_num'] = $row[10];
+
+
+        $result['info'] = json_decode($row[7], true);
+        for($i = 1; $i < 5; $i++)
+        {
+            $img_name = $result['info']["intro_img"][strval($i)];
+            if($img_name != "")
+            {
+                $result['info']["intro_img"][strval($i)] = sprintf("../images/project/%d/%s", $row[0], $img_name);
+            }
+        }
+
+        $sql = sprintf("SELECT username from members WHERE id = %s",$row[8]);
+        $r = mysqli_query($conn, $sql);
+        if(!$r) return NULL;
+        $organ_name = mysqli_fetch_row($r)[0];
+        $result['organizer'] = $organ_name;
+        
+        
+        mysqli_close($conn);
+        return $result;
+    }
     function get_hot()
     {
         $conn = get_conn();
@@ -145,29 +233,12 @@
             $template['main_img'] = sprintf("../images/project/%d/%s", $row[0], $row[2]);
             
 
-            //calculate the money ratio
-            $now_money = intval($row[4]);
-            $now_money_str = "";
-            $now_money_str = $now_money_str . ($now_money % 1000);
-            $now_money = intval($now_money / 1000);
-            while($now_money > 0)
-            {
-                $now_money_str = ($now_money % 1000) . ',' . $now_money_str;
-                $now_money = intval($now_money / 1000);
-                break;
-            }
-            $now_money_str = "NT$ " . $now_money_str;
-            $template['now_money'] = $now_money_str;
+            //calculate the money
+            $template['now_money'] = gen_money_str($row[4]);
             $template['ratio'] = intval((floatval($row[4]) / floatval($row[3])) * 100) . '%';
 
             //calculate the remaining day
-            $now_time = date("Y-m-d H:i:s");
-            $now_time = new DateTime($now_time, new DateTimeZone('Asia/Taipei'));
-            $end_date = new DateTime($row[5], new DateTimeZone('Asia/Taipei'));
-            $diff = date_diff($end_date, $now_time);
-            $diff = $diff->format('%a');
-            if(intval($diff) == 0) $diff = 1;
-            $template['remain_day'] = $diff;
+            $template['remain_day'] = cal_remain_day($row[5]);
 
             //add to result
             $result[$i] = $template;
@@ -175,5 +246,4 @@
         }
         return $result;
     }
-    get_hot();
 ?>
