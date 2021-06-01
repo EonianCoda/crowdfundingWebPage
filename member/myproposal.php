@@ -32,124 +32,85 @@
     <div class="container member">
         <h3>我的提案</h3>
         
-        <h3>設計</h3>
-        <div style="position:relative">
-            <div class="swiper-container" id="swp_music">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide project-object">
-                        <div class="vertical-items h-80">
-                            <div class="image-container h-80">
-                                <img src="../images/product/robot.jpg"> </img>
-                            </div>
-                            <a href="../main/content.php">   
-                                <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
-                            </a>
-                        </div>
-                        <div class="horizon-between top-divider">
-                            <div class="horizon-items vertical-center">
-                                <b>NT$ 2,900,500</b>
-                                <p class="vertical-divider"> 
-                                    <b>300 %</b> 
-                                </p>
-                            </div>
-                            <p>還剩40天</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide project-object">
-                        <div class="vertical-items h-80">
-                            <div class="image-container h-80">
-                                <img src="../images/product/robot.jpg""> </img>
-                            </div>
-                            <a href="../main/content.php">   
-                                <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
-                            </a>
-                        </div>
-                        <div class="horizon-between top-divider">
-                            <div class="horizon-items vertical-center">
-                                <b>NT$ 2,900,500</b>
-                                <p class="vertical-divider"> 
-                                    <b>300 %</b> 
-                                </p>
-                            </div>
-                            <p>還剩40天</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide project-object">
-                        <div class="vertical-items h-80">
-                            <div class="image-container h-80">
-                                <img src="../images/product/robot.jpg""> </img>
-                            </div>
-                            <a href="../main/content.php">   
-                                <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情 </h3>
-                            </a>
-                        </div>
-                        <div class="horizon-between top-divider">
-                            <div class="horizon-items vertical-center">
-                                <b>NT$ 2,900,500</b>
-                                <p class="vertical-divider"> 
-                                    <b>300 %</b> 
-                                </p>
-                            </div>
-                            <p>還剩40天</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-button-prev">&nbsp;</div>
-                <div class="swiper-button-next">&nbsp;</div>
-                <div class="swiper-scrollbar"></div>
-                
-            </div>
-            <script>
-                const swp_music = new Swiper('#swp_music', {
-                    grabCursor : true,
-                    centeredSlides: true,
-                    slidesPerView: 2,
-                    slidesPerGroup: 1,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    scrollbar: {
-                        el: '.swiper-scrollbar',
-                    },
-                    on: {
-                        afterInit:function(){
-                            if(this.isBeginning){
-                                this.navigation.$prevEl.css('display','none');
+
+        <?php
+            for ($category = 1; $category < 6; $category++)
+            {
+                switch($category)
+                {
+                    case 1:
+                        echo "<h3>設計</h3>";
+                        $swp_id = swp_design;
+                        break;
+                    case 2:
+                        echo "<h3>音樂</h3>";
+                        $swp_id = swp_music;
+                        break;
+                    case 3:
+                        echo "<h3>教育</h3>";
+                        $swp_id = swp_edu;
+                        break;
+                    case 4:
+                        echo "<h3>科技</h3>";
+                        $swp_id = swp_tech;
+                        break;
+                    case 5:
+                        echo "<h3>生活</h3>";
+                        $swp_id = swp_life;
+                        break;
+                }
+                echo "<div style=\"position:relative\">";
+                    echo "<div class=\"swiper-container\" id=\"".$swp_id."\">";
+                        echo "<div class=\"swiper-wrapper\">";
+                            if(!function_exists('get_hot')) require_once('../backend/project.php');
+                            $projects = get_hot();
+                            $proj_num = count($projects);
+                            foreach($projects as $project)
+                            {
+                                echo '<div class="swiper-slide project-object">';
+                                    echo '<div class="image-container">';
+                                        echo sprintf('<img src="%s">',$project['main_img']);
+                                    echo '</div>';
+                                    echo '<div class="h-20">';
+                                        echo sprintf('<a href="../main/content.php?id=%s">',$project['id']);
+                                            echo sprintf('<h3>%s</h3>',$project['name']);
+                                        echo '</a>';
+                                    echo '</div>';
+                                    echo '<button disabled="disabled" type="button" class="button m-b-10">+關注</button>';
+                                    echo '<div class="horizon-between top-divider">';
+                                        echo '<div class="horizon-items vertical-center">';
+                                            echo sprintf('<b>%s</b>', $project['now_money']);
+                                            echo sprintf('<p class="vertical-divider"> <b>%s</b> </p>',$project['ratio']);
+                                        echo '</div>';
+                                        echo sprintf('<p>還剩%s天</p>',$project['remain_day']);
+                                    echo '</div>';
+                                echo '</div>';
                             }
-                            else{
-                                this.navigation.$prevEl.css('display','block');  
-                            }
-                        },
-                        slideChangeTransitionEnd: function(){
-                            if(this.isEnd){
-                                this.navigation.$nextEl.css('display','none');
-                            }
-                            else{
-                                this.navigation.$nextEl.css('display','block');  
-                            }
-                            
-                            if(this.isBeginning){
-                                this.navigation.$prevEl.css('display','none');
-                            }
-                            else{
-                                this.navigation.$prevEl.css('display','block');  
-                            }
-                        },
-                    }
-                });
-                
-            </script>
-        </div>
-        <h3>音樂</h3>
-        
-        <h3>教育</h3>
-        
-        <h3>科技</h3>
-        
-        <h3>生活</h3>
-        
-        
+                        echo "</div>";
+                        echo "<div class=\"swiper-button-prev\"></div>";
+                        echo "<div class=\"swiper-button-next\"></div>";
+                        echo "<div class=\"swiper-scrollbar\"></div>";
+                    echo "</div>";
+                    echo "<script>
+                        var ".$swp_id." = new Swiper('#".$swp_id."', {
+                            grabCursor : true,
+                            centeredSlides: true,
+                            slidesPerView: 2,
+                            slidesPerGroup: 1,
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                            scrollbar: {
+                                el: '.swiper-scrollbar',
+                            },
+                        });
+                        
+                    </script>";
+                echo "</div>";
+            }
+        ?>
+            
     </div>
 
     <footer class="footerpage">

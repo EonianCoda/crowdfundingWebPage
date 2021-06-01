@@ -123,4 +123,19 @@ Returns:
     }
     echo $img_path;
   }
+
+  function get_user_project_list($list_name,$category)
+  {
+    session_start();
+    $user_id = authentication($_SESSION['online_key']);
+    $conn = get_conn();
+    $sql = "SELECT project FROM members WHERE id = $user_id";
+    $r = mysqli_query($conn,$sql);
+
+    $id_list = $r[$list_name];
+    $sql = "SELECT id,name,main_img,goal_money,now_money,end_date FROM project WHERE id = $id_list";
+    $r = mysqli_query($conn,$sql);
+    
+    return $r;
+  }
 ?>
