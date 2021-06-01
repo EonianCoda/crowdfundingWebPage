@@ -58,7 +58,7 @@
                     <a href="../main/proposal.php">提案</a>
                 </li>
                 <li>
-                    <a href="../main/project.php">探索</a>
+                    <a href="../main/project.php?category=design">探索</a>
                 </li>
             </div>
         </nav>

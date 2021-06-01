@@ -105,6 +105,9 @@
                 if(!function_exists('get_hot')) require_once('../backend/project.php');
                 $projects = search_proj($category);
                 $proj_num = count($projects);
+
+                
+                $projects = array_slice($projects, (intval($_GET['page']) - 1)*6);
                 foreach($projects as $project)
                 {
                     echo '<div class="project-object">';
@@ -133,18 +136,52 @@
     </section>
 
     <div class="horizon-items horizon-center vertical-center">
-        <button class="button-transparent"> 上一頁</button>
+        <button class="button-transparent" onclick="add_page(-1)" <?php if($_GET['page'] == 1) echo "disabled";   ?> > 上一頁</button>
         <?php
             $page_num = ceil(floatval($proj_num) / 6);
             for($i = 1; $i <= $page_num; $i++)
             {
-                echo sprintf('<button class="button-transparent"> %s </button>', $i);
+                echo sprintf('<button class="button-transparent" onclick="turn_page(%d)"> %s </button>', $i, $i);
             }
         ?>
-        <button class="button-transparent"> 下一頁</button>
+        <button class="button-transparent" onclick="add_page(1)"<?php if($_GET['page'] == $page_num) echo "disabled";  ?>> 下一頁</button>
     </div>
 
     <footer class="footerpage">
     </footer>
 </body>
 </html>
+
+<script>
+
+    function findGetParameter(parameterName) 
+    {
+        var result = null,
+            tmp = [];
+        location.search
+            .substr(1)
+            .split("&")
+            .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+            });
+        return result;
+    }
+    function turn_page(page)
+    {
+        var url = new URL(window.location.href);
+        url.searchParams.set("page",page);
+        window.location.href = url.toString();
+    }
+    function add_page(offset)
+    {
+        var url = new URL(window.location.href);
+        if(url.searchParams.get('page'))
+        {
+            var page = url.searchParams.get('page');
+            page += offset;
+            url.searchParams.set("page",page);
+            window.location.href = url.toString();
+        }
+    }
+</script>
