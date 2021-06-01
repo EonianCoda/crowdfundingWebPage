@@ -34,6 +34,11 @@
         
 
         <?php
+            if(!function_exists("get_user_project_list")) require_once("../backend/member_info.php");
+            if(!function_exists("search_proj_by_ids")) require_once("../backend/project.php");
+            $proj_list = get_user_project_list();
+            $proj_list = $proj_list['my_proposal'];
+            $proj_info = search_proj_by_ids($proj_list);
             for ($category = 1; $category < 6; $category++)
             {
                 switch($category)
@@ -63,10 +68,10 @@
                     echo "<div class=\"swiper-container\" id=\"".$swp_id."\">";
                         echo "<div class=\"swiper-wrapper\">";
                             if(!function_exists('get_hot')) require_once('../backend/project.php');
-                            $projects = get_hot();
-                            $proj_num = count($projects);
-                            foreach($projects as $project)
+                            
+                            foreach($proj_info as $project)
                             {
+                                if($project['category'] != $category) continue;
                                 echo '<div class="swiper-slide project-object">';
                                     echo '<div class="image-container">';
                                         echo sprintf('<img src="%s">',$project['main_img']);

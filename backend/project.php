@@ -141,17 +141,8 @@
         return 0;
     }
 
-    /*
-    only get the main picture, name, 
-    */
-    function get_proj_sim_info($id)
-    {
-        $conn = get_conn();
-
-        mysqli_close($conn);
-    }
-
-    /*Returns:
+    /*get the detailed info on the content.php
+    Returns:
         NULL: no this id
     */
     function get_info($id)
@@ -210,11 +201,10 @@
         return $result;
     }
 
-
     function get_proj($cond)
     {
         $conn = get_conn();
-        $sql = sprintf("SELECT id,name,main_img,goal_money,now_money,end_date FROM project %s", $cond);
+        $sql = sprintf("SELECT id,name,main_img,goal_money,now_money,end_date,category FROM project %s", $cond);
         $r = mysqli_query($conn, $sql);
         date_default_timezone_set('Asia/Taipei');
 
@@ -226,6 +216,7 @@
             "now_money"   => "",
             "ratio"   => -"",
             "remain_day"  => "",
+            "category" => ""
         );
 
         $i = 0;
@@ -235,7 +226,7 @@
             $template['name'] = $row[1];
             $template['main_img'] = sprintf("../images/project/%d/%s", $row[0], $row[2]);
             
-
+            $template['category'] = $row[6];
             //calculate the money
             $template['now_money'] = gen_money_str($row[4]);
             $template['ratio'] = intval((floatval($row[4]) / floatval($row[3])) * 100) . '%';
@@ -264,5 +255,20 @@
         $cond = "ORDER BY sponsor_num, tracking_num LIMIT 6";
         $result = get_proj($cond);
         return $result;
+    }
+
+    function search_proj_by_ids($ids)
+    {
+        if(count($ids) == 0) return NULL;
+        else
+        {
+            $cond = sprintf("WHERE id = %s",$ids[0]);
+            for($i = 1; $i < count($ids); $i++)
+            {
+                $cond = $cond . " or " . "id = " . $ids[$i];
+            }
+            $result = get_proj($cond);
+            return $result;
+        }
     }
 ?>

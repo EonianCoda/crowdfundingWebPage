@@ -2,5 +2,5 @@
 長度限制,20,10,?,無,12,50,30,無
 ID,username,realname,password,birthday,phone_number,useremail,photo,project
 1,Alien,Haha,$2y$10$s5ruvpTgS8ynU073aAWRjus9ch8/0jqwH.a5T3V7YFNlYfrNfE42K,2050-10-30,0923651952,haha@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": [1,3,4,5,6]}"
-2,chenghan0516,瓦基,$2y$10$zso8NwFEJQ6/YUR21LzfvuuPNLY0atiK0y8gkamADz9xCPLGIHKO2,2021-05-16,0952223201,chenghan0516@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": [7]}"
-3,Ming,咕嘰咕嘰,$2y$10$EgxjR90HEJ90hE727OhRVemgj8qq7B40qxRpqUG0c60z.N1/zEZyO,2021-05-31,0905278405,haha@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": [2]}"
+2,chenghan0516,瓦基,$2y$10$zso8NwFEJQ6/YUR21LzfvuuPNLY0atiK0y8gkamADz9xCPLGIHKO2,2021-05-16,0952223201,chenghan0516@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": []}"
+3,Ming,咕嘰咕嘰,$2y$10$EgxjR90HEJ90hE727OhRVemgj8qq7B40qxRpqUG0c60z.N1/zEZyO,2021-05-31,0905278405,haha@gmail.com,None,"{""follow"": [], ""watch_list"": [], ""my_proposal"": [2,7,8,9]}"
