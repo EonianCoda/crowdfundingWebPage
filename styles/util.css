@@ -51,7 +51,11 @@
   border: 1px solid #1d6a96;
   cursor: pointer;
 }
-
+.button:disabled{
+  background:lightgray;
+  color: black;
+  border: 1px solid lightgray;
+}
 .quote {
   border-left: solid;
   border-color: #409fd6;
