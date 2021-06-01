@@ -179,15 +179,15 @@
     session_start();
     if(isset($_SESSION['online_key']))
     {
-      
-      if (authentication($_SESSION['online_key']) == 0)
+      if (authentication($_SESSION['online_key']) != 0)
       { 
-        echo "<script type='text/javascript'>";
-        echo sprintf("alert('%s');", "僅限會員使用，請先登入或註冊!");
-        echo "window.location.href= '../main/login.php'";
-        echo "</script>";
+        return;
       }
     }
+    echo "<script type='text/javascript'>";
+    echo sprintf("alert('%s');", "僅限會員使用，請先登入或註冊!");
+    echo "window.location.href= '../main/login.php'";
+    echo "</script>";
   }
   //$status_code = login("TEST", "123");
 
