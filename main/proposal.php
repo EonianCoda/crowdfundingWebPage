@@ -59,7 +59,7 @@
                     </div>
                     <div class="w-40 vertical-items h-100 ">
                         <div class="prop h-15">
-                            <input class ="form-input h-90" type="text" maxlength=20 placeholder= "募款名稱" name="name" required> </input>
+                            <input class ="form-input h-90" type="text" maxlength=50 placeholder= "募款名稱" name="name" required> </input>
                         </div>
                         <div class="prop h-10" >
                             <select class="mt-2 mb-3 p-l-20 w-100 prop" 

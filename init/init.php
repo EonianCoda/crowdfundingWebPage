@@ -56,15 +56,16 @@
     function addProject()
 {
     $conn = get_conn();
-    if (($handle = fopen("project.csv", "r")) !== FALSE)
+    if (($handle = fopen("project.tsv", "r")) !== FALSE)
     {
         //ignore first three row
-        $data = fgetcsv($handle, 1000);
-        $data = fgetcsv($handle, 1000);
-        $data = fgetcsv($handle, 1000);
+        $data = fgetcsv($handle, 1000, "\t");
+        $data = fgetcsv($handle, 1000, "\t");
+        $data = fgetcsv($handle, 1000, "\t");
         $i = 1;
-        while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) 
+        while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE) 
         {
+            $row[1] = substr($row[1],0, strlen($row[1]) - 1);
             $sql = sprintf("INSERT INTO `project` (`id`, `name`, `category`, `goal_money`, `now_money`, `begin_date`, `end_date`, `main_img`, `info`, `organizer`, `sponsor_num`, `tracking_num`) VALUES (%d, '%s', '%s', '%d', '%d', '%s', '%s', '%s', '%s', '%d', '%d', '%d')",
             $row[0],
             $row[1],
@@ -78,9 +79,13 @@
             $row[9],
             $row[10],
             $row[11]
-            );
+            ); 
             $r = mysqli_query($conn, $sql);
-            if(!$r) echo "line" . $i. "失敗" . "<br>";
+            if(!$r)
+            {
+                echo $sql . "<br>";
+                echo "line" . $i. "失敗" . "<br>";
+            }
             else
             {
                 echo "加入project:" . $row[1] . "成功<br>";

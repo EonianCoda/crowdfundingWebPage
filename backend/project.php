@@ -111,4 +111,67 @@
         return 0;
     }
 
+    /*
+    only get the main picture, name, 
+    */
+    function get_proj_sim_info($id)
+    {
+        $conn = get_conn();
+
+        mysqli_close($conn);
+    }
+    function get_hot()
+    {
+        $conn = get_conn();
+        $sql = "SELECT id,name,main_img,goal_money,now_money,end_date FROM project ORDER BY sponsor_num, tracking_num LIMIT 6";
+        $r = mysqli_query($conn, $sql);
+        date_default_timezone_set('Asia/Taipei');
+
+        $result = array();
+        $template = array(
+            "name" => "",
+            "main_img" => "",
+            "now_money"   => "",
+            "ratio"   => -"",
+            "remain_day"  => "",
+        );
+        //clone();
+
+        $i = 0;
+        while ($row = mysqli_fetch_row($r)) 
+        {
+            $template['name'] = $row[1];
+            $template['main_img'] = sprintf("../images/project/%d/%s", $row[0], $row[2]);
+
+
+            $now_money = intval($row[4]);
+            $now_money_str = "";
+            $now_money_str = $now_money_str . ($now_money % 1000);
+            $now_money = intval($now_money / 1000);
+            while($now_money > 0)
+            {
+                $now_money_str = ($now_money % 1000) . ',' . $now_money_str;
+                $now_money = intval($now_money / 1000);
+                break;
+            }
+            $now_money_str = "NT$ " . $now_money_str;
+            $template['now_money'] = $now_money_str;
+
+            $template['ratio'] = intval((floatval($row[3]) / floatval($row[4])) * 100) . '%';
+
+            $now_time = date("Y-m-d H:i:s");
+            $now_time = new DateTime($now_time, new DateTimeZone('Asia/Taipei'));
+            $end_date = new DateTime($row[5], new DateTimeZone('Asia/Taipei'));
+            // ask the difference :
+            $diff = date_diff($end_date, $now_time);
+            $diff = $diff->format('%a');
+            if(intval($diff) == 0) $diff = 1;
+            $template['remain_day'] = $diff;
+
+            $result[$i] = $template;
+            $i++;
+        }
+        var_dump($result);
+    }
+    get_hot();
 ?>

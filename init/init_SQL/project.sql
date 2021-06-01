@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 31, 2021 at 02:03 PM
+-- Generation Time: Jun 01, 2021 at 04:18 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `project` (
   `id` int(11) NOT NULL,
-  `name` char(20) NOT NULL,
+  `name` char(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `category` char(2) NOT NULL,
   `goal_money` int(11) NOT NULL,
   `now_money` int(11) NOT NULL DEFAULT '0',
