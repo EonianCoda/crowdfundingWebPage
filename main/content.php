@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="container horizon-between m-t-20 ">
-        <div class="vertical-items horizon-center m-t-20 w-65">
+        <div class="vertical-items m-t-20 w-65">
 
             <?php 
             foreach($result['info']['intro_img'] as $img)
@@ -94,7 +94,7 @@
                 if($img != "")
                 {
                     echo '<div class="m-r-30 m-t-30">';
-                    echo sprintf('<img src="%s" height="100%" width="100%">', $img);
+                    echo sprintf('<img src="%s" class="content_img">', $img);
                     echo ' </div>';
                         
                 }

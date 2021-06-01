@@ -35,7 +35,7 @@
                 <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
             </div>
         </div>
-        <div class="horizon-between vertical-center m-b-50 " >
+        <div class="horizon-around vertical-center m-b-50 " >
             <div class="w-20 h-30">
                 <img src="../images/founder/Ming.jpg" width="96%" height="100%"> <img>
             </div>

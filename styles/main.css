@@ -237,6 +237,9 @@ nav li a {
   border-radius: 6px;
   margin-top: 20px;
 }
+.content_img{
+  max-width: 100%;
+}
 @media screen and (min-width:560px){
   .project-object{
     max-width: 100%;
