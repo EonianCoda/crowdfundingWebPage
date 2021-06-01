@@ -94,9 +94,9 @@
                 if($img != "")
                 {
                     echo '<div class="m-r-30 m-t-30">';
-                    echo sprintf('<img src="%s" height="100%" width="100%"> </img>', $img);
+                    echo sprintf('<img src="%s" height="100%" width="100%">', $img);
                     echo ' </div>';
-                    
+                        
                 }
             }
             ?>

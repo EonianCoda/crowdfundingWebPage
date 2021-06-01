@@ -29,7 +29,7 @@
         if (!function_exists('new_proposal')) require_once('../backend/project.php');
         if (!function_exists('new_proposal_alert')) require_once('../backend/alert.php');
         only_for_members();
-
+        
         if(isset($_POST['name']))
         {
             $status_code = new_proposal();

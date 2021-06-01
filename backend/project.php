@@ -133,6 +133,7 @@
 
         
         move_img('main_img', $file_path);
+       
         for($i = 1; $i <= $intro_img_num; $i++)
         {
             move_img('intro_img' . $i, $file_path);

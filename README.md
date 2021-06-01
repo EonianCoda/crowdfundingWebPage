@@ -13,11 +13,17 @@ It is a web page for crowdfuningWebPage.
 選擇PHP Edit php.ini
 
 ### 第三步
-Ctrl+F 尋找 upload_max_filesize，預設為upload_max_filesize = 2M
-，修改為10M，便能接受最大到10MB的圖片
+Ctrl+F 
+尋找 upload_max_filesize:
+將upload_max_filesize = 2M，改為upload_max_filesize = 10M
+
+尋找 post_max_size:
+將post_max_size = 8M，改為post_max_size = 100M
+post_max_size
 
 ### 第四步
-重啟Apache與mysql
+重啟Apache: Apache Restart
+重啟mysql: MySQL Stop -> MySQL Start
 
 ## 初始化資料庫
 
