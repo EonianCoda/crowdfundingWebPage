@@ -77,7 +77,7 @@
     <div class="horizon-items wrap m0">
             <div class="project-object">
                 <div class="image-container">
-                    <img src="../images/product/chicken.jpg">
+                    <img src="../images/product/chicken.jpg" width="100%" hight="100%">
                 </div>
                 <div class="h-20">
                     <a href="../main/content.php">
@@ -95,7 +95,7 @@
             </div>
             <div class="project-object">
                 <div class="image-container">
-                    <img src="../images/product/chicken.jpg">
+                    <img class="h-100"src="../images/founder/Wacky.jfif">
                 </div>
                 <div class="h-20">
                     <a href="../main/content.php">
