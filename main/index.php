@@ -82,115 +82,32 @@
             <h1 class="quote">熱門項目</h1>
         </div>
         <div class="horizon-items wrap">
-            
-            <div class="project-object">
-                <div class="image-container">
-                    <img src="../images/product/chicken.jpg">
-                </div>
-                <div class="h-20">
-                    <a href="../main/content.php">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情</h3>
-                    </a>
-                </div>
-                <button type="button" class="button m-b-10">+關注</button>
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> <b>300 %</b> </p>
-                    </div>
-                    <p>還剩40天</p>
-                </div>
-            </div>
-            <div class="project-object">
-                <div class="image-container">
-                    <img src="../images/product/chicken.jpg">
-                </div>
-                <div class="h-20">
-                    <a href="../main/content.php">
-                        <h3> [KMT] 韓寶 </h3>
-                    </a>
-                </div>
-                <button type="button" class="button m-b-10">+關注</button>
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> <b>300 %</b> </p>
-                    </div>
-                    <p>還剩40天</p>
-                </div>
-            </div>
-            <div class="project-object">
-                <div class="image-container ">
-                    <img src="../images/product/chicken.jpg">
-                </div>
-                <div class="h-20">
-                    <a href="../main/content.php">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
-                    </a>
-                </div>
-                <button type="button" class="button m-b-10">+關注</button>
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> <b>300 %</b> </p>
-                    </div>
-                    <p>還剩40天</p>
-                </div>
-            </div>
-            <div class="project-object">
-                <div class="image-container ">
-                    <img src="../images/product/chicken.jpg">
-                </div>
-                <div class="h-20">
-                    <a href="../main/content.php">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
-                    </a>
-                </div>
-                <button type="button" class="button m-b-10">+關注</button>
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> <b>300 %</b> </p>
-                    </div>
-                    <p>還剩40天</p>
-                </div>
-            </div>
-            <div class="project-object">
-                <div class="image-container ">
-                    <img src="../images/product/chicken.jpg">
-                </div>
-                <div class="h-20">
-                    <a href="../main/content.php">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
-                    </a>
-                </div>
-                <button type="button" class="button m-b-10">+關注</button>
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> <b>300 %</b> </p>
-                    </div>
-                    <p>還剩40天</p>
-                </div>
-            </div>
-            <div class="project-object">
-                <div class="image-container ">
-                    <img src="../images/product/chicken.jpg">
-                </div>
-                <div class="h-20">
-                    <a href="../main/content.php">
-                        <h3> [KMT] 韓寶，一款真正人性化的智能語音 | 能說能唱 一台就給全家好心情ttttttttttttttttttttttttt</h3>
-                    </a>
-                </div>
-                <button type="button" class="button m-b-10">+關注</button>
-                <div class="horizon-between top-divider">
-                    <div class="horizon-items vertical-center">
-                        <b>NT$ 2,900,500</b>
-                        <p class="vertical-divider"> <b>300 %</b> </p>
-                    </div>
-                    <p>還剩40天</p>
-                </div>
-            </div>
+            <?php 
+            if(!function_exists('get_hot')) require_once('../backend/project.php');
+            $hot_projects = get_hot();
+
+            foreach($hot_projects as $project)
+            {
+                echo '<div class="project-object">';
+                    echo '<div class="image-container">';
+                        echo sprintf('<img src="%s">',$project['main_img']);
+                    echo '</div>';
+                    echo '<div class="h-20">';
+                        echo sprintf('<a href="../main/content.php?id=%s">',$project['id']);
+                            echo sprintf('<h3>%s</h3>',$project['name']);
+                        echo '</a>';
+                    echo '</div>';
+                    echo '<button type="button" class="button m-b-10">+關注</button>';
+                    echo '<div class="horizon-between top-divider">';
+                        echo '<div class="horizon-items vertical-center">';
+                            echo sprintf('<b>%s</b>', $project['now_money']);
+                            echo sprintf('<p class="vertical-divider"> <b>%s</b> </p>',$project['ratio']);
+                        echo '</div>';
+                        echo sprintf('<p>還剩%s天</p>',$project['remain_day']);
+                    echo '</div>';
+                echo '</div>';
+            }
+            ?>
         </div>
 
 

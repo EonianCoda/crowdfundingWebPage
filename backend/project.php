@@ -129,21 +129,23 @@
 
         $result = array();
         $template = array(
+            "id" => "",
             "name" => "",
             "main_img" => "",
             "now_money"   => "",
             "ratio"   => -"",
             "remain_day"  => "",
         );
-        //clone();
 
         $i = 0;
         while ($row = mysqli_fetch_row($r)) 
         {
+            $template['id'] = $row[0];
             $template['name'] = $row[1];
             $template['main_img'] = sprintf("../images/project/%d/%s", $row[0], $row[2]);
+            
 
-
+            //calculate the money ratio
             $now_money = intval($row[4]);
             $now_money_str = "";
             $now_money_str = $now_money_str . ($now_money % 1000);
@@ -156,22 +158,22 @@
             }
             $now_money_str = "NT$ " . $now_money_str;
             $template['now_money'] = $now_money_str;
+            $template['ratio'] = intval((floatval($row[4]) / floatval($row[3])) * 100) . '%';
 
-            $template['ratio'] = intval((floatval($row[3]) / floatval($row[4])) * 100) . '%';
-
+            //calculate the remaining day
             $now_time = date("Y-m-d H:i:s");
             $now_time = new DateTime($now_time, new DateTimeZone('Asia/Taipei'));
             $end_date = new DateTime($row[5], new DateTimeZone('Asia/Taipei'));
-            // ask the difference :
             $diff = date_diff($end_date, $now_time);
             $diff = $diff->format('%a');
             if(intval($diff) == 0) $diff = 1;
             $template['remain_day'] = $diff;
 
+            //add to result
             $result[$i] = $template;
             $i++;
         }
-        var_dump($result);
+        return $result;
     }
     get_hot();
 ?>
