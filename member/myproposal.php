@@ -39,8 +39,14 @@
             $proj_list = get_user_project_list();
             $proj_list = $proj_list['my_proposal'];
             $proj_info = search_proj_by_ids($proj_list);
+            $empty_category = array(0,0,0,0,0);
+            foreach($proj_info as $project)
+            {
+                $empty_category[intval($project['category'])] = 1;
+            }
             for ($category = 1; $category < 6; $category++)
             {
+                if (!$empty_category[$category]) continue;
                 switch($category)
                 {
                     case 1:
