@@ -19,7 +19,6 @@ Ctrl+F
 
 尋找 post_max_size:
 將post_max_size = 8M，改為post_max_size = 100M
-post_max_size
 
 ### 第四步
 重啟Apache: Apache Restart
