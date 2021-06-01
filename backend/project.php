@@ -208,10 +208,12 @@
         mysqli_close($conn);
         return $result;
     }
-    function get_hot()
+
+
+    function get_proj($cond)
     {
         $conn = get_conn();
-        $sql = "SELECT id,name,main_img,goal_money,now_money,end_date FROM project ORDER BY sponsor_num, tracking_num LIMIT 6";
+        $sql = sprintf("SELECT id,name,main_img,goal_money,now_money,end_date FROM project %s", $cond);
         $r = mysqli_query($conn, $sql);
         date_default_timezone_set('Asia/Taipei');
 
@@ -244,6 +246,22 @@
             $result[$i] = $template;
             $i++;
         }
+
+        mysqli_close($conn);
+        return $result;
+    }
+
+    function search_proj($category = 1)
+    {   
+        $cond = sprintf("WHERE category = %s", $category);
+        $result = get_proj($cond);
+        return $result;
+    }
+
+    function get_hot()
+    {
+        $cond = "ORDER BY sponsor_num, tracking_num LIMIT 6";
+        $result = get_proj($cond);
         return $result;
     }
 ?>
