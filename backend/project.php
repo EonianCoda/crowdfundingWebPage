@@ -128,7 +128,7 @@
         mysqli_close($conn);
 
 
-        $file_path = sprintf('../images/projects/%d/', $project_id);
+        $file_path = sprintf('../images/project/%d/', $project_id);
         if (!file_exists($file_path)) mkdir($file_path);
 
         

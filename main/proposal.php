@@ -103,7 +103,7 @@
             <div class="vertical-items horizon-center m-t-20 w-70">
                 <div class="m-t-30">
                     <div class="prop horizon-center vertical-center border">
-                        <input id="myfile1" type="file" name="intro_img1" required><br/>
+                        <input id="myfile1" type="file" name="intro_img1"><br/>
                         <img class="maxh-1000"src="" id="show1" width="100%">
                         <script type="text/javascript">
                         $(function() {
@@ -123,7 +123,7 @@
                 </div>
                 <div class="m-t-30">
                     <div class="prop horizon-center vertical-center border">
-                        <input id="myfile2" type="file" name="intro_img2" required><br/>
+                        <input id="myfile2" type="file" name="intro_img2"><br/>
                         <img class="maxh-1000"src="" id="show2" width="100%">
                         <script type="text/javascript">
                         $(function() {
@@ -143,7 +143,7 @@
                 </div>
                 <div class="m-t-30">
                     <div class="prop horizon-center vertical-center border">
-                        <input id="myfile3" type="file" name="intro_img3" required><br/>
+                        <input id="myfile3" type="file" name="intro_img3"><br/>
                         <img class="maxh-1000"src="" id="show3" width="100%">
                         <script type="text/javascript">
                         $(function() {
@@ -163,7 +163,7 @@
                 </div>
                 <div class="m-t-30">
                     <div class="prop horizon-center vertical-center border">
-                        <input id="myfile4" type="file" name="intro_img4" required><br/>
+                        <input id="myfile4" type="file" name="intro_img4"><br/>
                         <img class="maxh-1000"src="" id="show4" width="100%">
                         <script type="text/javascript">
                         $(function() {
@@ -183,7 +183,7 @@
                 </div>
                 <div class="m-t-30">
                     <div class="prop horizon-center vertical-center border">
-                        <input id="myfile5" type="file" name="intro_img5" required><br/>
+                        <input id="myfile5" type="file" name="intro_img5"><br/>
                         <img class="maxh-1000"src="" id="show5" width="100%">
                         <script type="text/javascript">
                         $(function() {
@@ -205,13 +205,13 @@
                     <div class="w-40">
                         <h2>詳細規格</h2>
                         <div class="w-100 h-200p">
-                        <textarea type="text" class="form-input h-90p p-t-15" placeholder="詳細規格" name="content" maxlength="200"></textarea>
+                        <textarea type="text" class="form-input h-90p p-t-15" placeholder="詳細規格" name="content" maxlength="200" required></textarea>
                         </div>
                     </div>
                     <div class="w-40">
                         <h2>聯絡資訊</h2>
                         <div class="w-100 h-200p">
-                        <textarea type="text" class="form-input h-90p p-t-15" placeholder="聯絡資訊" name="contact" maxlength="200"></textarea>
+                        <textarea type="text" class="form-input h-90p p-t-15" placeholder="聯絡資訊" name="contact" maxlength="200" required></textarea>
                         </div>
                     </div>
                 </div>

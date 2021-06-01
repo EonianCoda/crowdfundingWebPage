@@ -14,7 +14,7 @@
         0: register success
         1: duplicate account name
         2: unknow error on Insert new memeber
-    */
+    */  
     
     $empty_project = '{"watch_list":[],"my_proposal":[],"follow":[]}';
 
