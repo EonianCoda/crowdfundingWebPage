@@ -231,7 +231,7 @@ nav li a {
   flex-direction: column;
   flex-grow: 1;
   width: 99%;
-  max-height: 30em;
+  max-height: 35em;
   padding: 1em;
   border: 1px solid #1d6a96;
   border-radius: 6px;
