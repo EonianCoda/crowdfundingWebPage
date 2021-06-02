@@ -8,11 +8,16 @@
     {
         $money = intval($money);
         $money_str = "";
-        $money_str = $money_str . ($money % 1000);
+
+        if($money % 1000 == 0) $money_str = $money_str . '000';
+        else $money_str = $money_str . ($money % 1000);
+
+        
         $money = intval($money / 1000);
         while($money > 0)
         {
-            $money_str = ($money % 1000) . ',' . $money_str;
+             if($money % 1000 == 0) $money_str = '000' . ',' . $money_str;
+            else $money_str = ($money % 1000) . ',' . $money_str;
             $money = intval($money / 1000);
             break;
         }
@@ -252,7 +257,7 @@
 
     function get_hot()
     {
-        $cond = "ORDER BY sponsor_num, tracking_num LIMIT 6";
+        $cond = "ORDER BY sponsor_num DESC, tracking_num DESC LIMIT 6";
         $result = get_proj($cond);
         return $result;
     }

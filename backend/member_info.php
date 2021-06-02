@@ -84,6 +84,7 @@ Returns:
         //echo $file_to_saved;
         move_uploaded_file($temp, $file_to_saved);
       }
+      mysqli_close($conn);
       return 0;
   }
   function get_personal_info()
@@ -110,6 +111,7 @@ Returns:
           );
           return $user_data;
       }
+      mysqli_close($conn);
   }
   function get_personal_img($user_data)
   {
@@ -124,17 +126,49 @@ Returns:
     echo $img_path;
   }
 
-  function get_user_project_list()
+  function get_user_project_list($user_id = 0)
   {
-    session_start();
-    $user_id = authentication($_SESSION['online_key']);
+    if($user_id == 0)
+    {
+      session_start();
+      $user_id = authentication($_SESSION['online_key']);
+    }
+
     $conn = get_conn();
     $sql = "SELECT project FROM members WHERE id = $user_id";
     $r = mysqli_query($conn,$sql);
     $r = mysqli_fetch_row($r)[0];
 
     $id_list = json_decode($r, true);
+    mysqli_close($conn);
     return $id_list;
   }
 
+  function edit_watch_list($id, $status)
+  {
+    session_start();
+    $id = intval($id);
+    if($status == "false") $status = false;
+    else $status = true;
+    $user_id = authentication($_SESSION['online_key']);
+    $proj_list = get_user_project_list($user_id);
+    
+    $tmp = array();
+
+    foreach($proj_list['watch_list'] as $proj_id)
+    {
+      if(intval($proj_id) == $id) continue;
+      array_push($tmp, intval($proj_id));
+    }
+    if($status) array_push($tmp, $id);
+    $proj_list['watch_list'] = $tmp;
+
+    $proj_list = json_encode($proj_list);
+    var_dump($proj_list);
+    $conn = get_conn();
+    $sql = sprintf("UPDATE members SET project = '%s' WHERE id = %s",$proj_list, $user_id);
+    $r = mysqli_query($conn,$sql);
+    
+    mysqli_close($conn);
+  }
 ?>

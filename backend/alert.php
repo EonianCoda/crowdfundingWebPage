@@ -12,6 +12,9 @@
         {
             case 0:
                 alert_message("註冊成功");
+                echo "<script type='text/javascript'>";
+                echo "window.location.href= '../main/login.php'";
+                echo "</script>";
                 break;
             case 1:
                 alert_message("重複的帳號名稱");
