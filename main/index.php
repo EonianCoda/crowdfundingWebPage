@@ -109,8 +109,6 @@
                     echo '</div>';
                     
                     echo sprintf('<button id = "%d" onclick="watch(this)" type="button" ', $project['id']);
-
-                    
                     if($watch_list != NULL and ($key = array_search(intval($project['id']), $watch_list))!=false )
                     {
                         echo 'class="button-watched" >✔已關注</button>';
@@ -151,9 +149,14 @@
             newClass = "button-watched";
             newValue = "✔已關注";
         }
-        
+        $.post("../backend/add_watch_list.php", { 'id': button.id, 'status': watched }).done(function( data ) {
+            if (data == "fail")
+            {
+                alert("請先登入再進行此操作!");
+                window.location.href = '../main/login.php';
+            }
+        });
         button.className = newClass;
         button.innerHTML = newValue;
-        $.post("../backend/add_watch_list.php", { 'id': button.id, 'status': watched });
     }
 </script>

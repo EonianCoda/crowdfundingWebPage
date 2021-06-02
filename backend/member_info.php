@@ -144,6 +144,10 @@ Returns:
     return $id_list;
   }
 
+  /*Return:
+    Success: true
+    Fail: false
+  */
   function edit_watch_list($id, $status)
   {
     session_start();
@@ -151,6 +155,7 @@ Returns:
     if($status == "false") $status = false;
     else $status = true;
     $user_id = authentication($_SESSION['online_key']);
+    if ($user_id == 0) return false;
     $proj_list = get_user_project_list($user_id);
     
     $tmp = array();
@@ -170,5 +175,6 @@ Returns:
     $r = mysqli_query($conn,$sql);
     
     mysqli_close($conn);
+    return true;
   }
 ?>
