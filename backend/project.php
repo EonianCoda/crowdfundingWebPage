@@ -225,7 +225,6 @@
             "ratio"   => -"",
             "remain_day"  => "",
             "category" => "",
-            "id" => ""
         );
 
         $i = 0;
