@@ -26,33 +26,35 @@
     </header>
     <div class="container vertical-items m-t-50">
         <div class="horizon-between vertical-center m-b-50 " >
+            <div class="w-50 vertical-items text-center vertical-center horizon-center">
+                <h1> Make Dream Come True </h1>
+                <br>
+                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
+            </div>
             <div class="w-50 h-30">
                 <img src="../images/aboutus/dream.jpg" width="96%" height="100%"> <img>
-            </div>
-            <div class="w-50 vertical-items text-center vertical-center horizon-center">
-                <h1> Make Dream Come True </h1>
-                <br>
-                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
-            </div>
-        </div>
-        <div class="horizon-around vertical-center m-b-50 " >
-            <div class="w-20 h-30">
-                <img src="../images/founder/Ming.jpg" width="96%" height="100%"> <img>
-            </div>
-            <div class="w-50 vertical-items text-center vertical-center horizon-center">
-                <h1> Make Dream Come True </h1>
-                <br>
-                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
             </div>
         </div>
         <div class="horizon-between vertical-center m-b-50 " >
             <div class="w-20 h-30">
-                <img src="../images/founder/Alien.JPG" width="96%" height="100%"> <img>
+                <img src="../images/founder/Ming.jpg" width="96%" height="100%"> <img>
             </div>
             <div class="w-50 vertical-items text-center vertical-center horizon-center">
-                <h1> Make Dream Come True </h1>
+                <h1> 黃明勝 </h1>
                 <br>
-                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
+                <p>四電機三甲 B10730026<p>
+                <p>前端的設計開發<p>
+            </div>
+        </div>
+        <div class="horizon-between vertical-center m-b-50 " >
+            <div class="w-50 vertical-items text-center vertical-center horizon-center">
+                <h1> 楊雲翔 </h1>
+                <br>
+                <p>四資工三甲 B10730022<p>
+                <p>後端的設計開發<p>
+            </div>
+            <div class="w-20 h-30">
+                <img src="../images/founder/Alien.JPG" width="96%" height="100%"> <img>
             </div>
         </div>
         <div class="horizon-between vertical-center m-b-50 " >
@@ -60,9 +62,10 @@
                 <img src="../images/founder/Wacky.jfif" width="96%" height="100%"> <img>
             </div>
             <div class="w-50 vertical-items text-center vertical-center horizon-center">
-                <h1> Make Dream Come True </h1>
+                <h1> 吳承翰 </h1>
                 <br>
-                <p>Achieve 是一個群眾集資平台。立志於幫助人們實現夢想<p>
+                <p>四資工三甲 B10730004<p>
+                <p>會員中心ㄉ的設計開發<p>
             </div>
         </div>
     </div>
