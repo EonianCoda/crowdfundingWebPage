@@ -9,7 +9,10 @@
         $money = intval($money);
         $money_str = "";
 
-        if($money % 1000 == 0) $money_str = $money_str . '000';
+
+
+        if($money == 0) $money_str = '0';
+        else if($money % 1000 == 0) $money_str = $money_str . '000';
         else $money_str = $money_str . ($money % 1000);
 
         
@@ -186,7 +189,7 @@
 
 
         $result['info'] = json_decode($row[7], true);
-        for($i = 1; $i < 5; $i++)
+        for($i = 1; $i <= 5; $i++)
         {
             $img_name = $result['info']["intro_img"][strval($i)];
             if($img_name != "")
@@ -299,7 +302,6 @@
 
         mysqli_close($conn);
 
-        echo $sql;
         if(!$r) return false;
         return true;
     }

@@ -59,11 +59,11 @@
     if (($handle = fopen("project.tsv", "r")) !== FALSE)
     {
         //ignore first three row
-        $data = fgetcsv($handle, 1000, "\t");
-        $data = fgetcsv($handle, 1000, "\t");
-        $data = fgetcsv($handle, 1000, "\t");
+        $data = fgetcsv($handle, 2000, "\t");
+        $data = fgetcsv($handle, 2000, "\t");
+        $data = fgetcsv($handle, 2000, "\t");
         $i = 1;
-        while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE) 
+        while (($row = fgetcsv($handle, 2000, "\t")) !== FALSE) 
         {
             $row[1] = substr($row[1],0, strlen($row[1]) - 1);
             $sql = sprintf("INSERT INTO `project` (`id`, `name`, `category`, `goal_money`, `now_money`, `begin_date`, `end_date`, `main_img`, `info`, `organizer`, `sponsor_num`, `tracking_num`) VALUES (%d, '%s', '%s', '%d', '%d', '%s', '%s', '%s', '%s', '%d', '%d', '%d')",

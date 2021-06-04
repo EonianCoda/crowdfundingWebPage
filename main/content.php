@@ -87,8 +87,12 @@
     </div>
     <div class="container horizon-between m-t-20 ">
         <div class="vertical-items m-t-20 w-65">
-
             <?php 
+            if($result['info']['content'] != "")
+            {
+                echo sprintf("<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%s</p>",$result['info']['content']);
+            }
+
             foreach($result['info']['intro_img'] as $img)
             {
                 if($img != "")
@@ -99,15 +103,11 @@
                         
                 }
             }
+                
             ?>
 
             <div class="horizon-between m-r-30">
-                <div class="w-40">
-                    <h2>詳細規格</h2>
-                    <div class="w-100 form-input h-200p">
-                        <p> <?php echo $result['info']['content']; ?> </p>
-                    </div>
-                </div>
+
                 <div class="w-40">
                     <h2>聯絡資訊</h2>
                     <div class="w-100 form-input h-200p">
@@ -150,11 +150,11 @@
                 </div>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 500</b>
+                        <b>NT$ 1000</b>
                     </div>
                     <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
-                <?php echo sprintf('<button class="button" onclick="donate(%s, 500)" >贊助專案</button>',$_GET['id']); ?>
+                <?php echo sprintf('<button class="button" onclick="donate(%s, 1000)" >贊助專案</button>',$_GET['id']); ?>
             </div>
             <div class="getmoney">
                 <div class="image-container">
@@ -164,15 +164,15 @@
                         <h3> <?php echo $result['name']; ?></h3>
                 </div>
                 <div class="h-15">
-                    <p>純做善事，不求回饋</p>
+                    <p>我錢很多，隨便你用</p>
                 </div>
                 <div class="horizon-between top-divider">
                     <div class="horizon-items vertical-center">
-                        <b>NT$ 2,000</b>
+                        <b>NT$ 5,000</b>
                     </div>
                     <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
-                <?php echo sprintf('<button class="button" onclick="donate(%s, 2000)" >贊助專案</button>',$_GET['id']); ?>
+                <?php echo sprintf('<button class="button" onclick="donate(%s, 5000)" >贊助專案</button>',$_GET['id']); ?>
             </div>
         </div>
         
