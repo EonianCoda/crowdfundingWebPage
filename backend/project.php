@@ -224,7 +224,8 @@
             "now_money"   => "",
             "ratio"   => -"",
             "remain_day"  => "",
-            "category" => ""
+            "category" => "",
+            "id" => ""
         );
 
         $i = 0;

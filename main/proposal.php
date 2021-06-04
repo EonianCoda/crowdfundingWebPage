@@ -101,6 +101,10 @@
         </div>
         <div class="container horizon-between m-t-20 ">
             <div class="vertical-items horizon-center m-t-20 w-70">
+                    <h2>專案內容</h2>
+                    <div class="w-100 h-200p">
+                        <textarea type="text" class="form-input h-90p p-t-15" placeholder="專案內容" name="content" maxlength="200" required></textarea>
+                    </div>
                 <div class="m-t-30">
                     <div class="prop horizon-center vertical-center border">
                         <input id="myfile1" type="file" name="intro_img1"><br/>
@@ -202,12 +206,12 @@
                     </div>
                 </div>
                 <div class="horizon-between m-r-30">
-                    <div class="w-40">
+                    <!-- <div class="w-40">
                         <h2>詳細規格</h2>
                         <div class="w-100 h-200p">
                         <textarea type="text" class="form-input h-90p p-t-15" placeholder="詳細規格" name="content" maxlength="200" required></textarea>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="w-40">
                         <h2>聯絡資訊</h2>
                         <div class="w-100 h-200p">

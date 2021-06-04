@@ -95,7 +95,6 @@
             $watch_list = NULL;
             if($user_id != 0)  $watch_list = get_user_project_list($user_id)['watch_list'];
 
-             
             foreach($hot_projects as $project)
             {
                 echo '<div class="project-object">';
@@ -109,12 +108,14 @@
                     echo '</div>';
                     
                     echo sprintf('<button id = "%d" onclick="watch(this)" type="button" ', $project['id']);
+                    
                     if($watch_list != NULL and ($key = array_search(intval($project['id']), $watch_list))!=false )
                     {
                         echo 'class="button-watched" >✔已關注</button>';
                     }
                     else
                     {
+                        //var_dump($watch_list);
                         echo 'class="button" >+關注</button>';
                     }
                     echo '<div class="horizon-between top-divider m-t-10">';
