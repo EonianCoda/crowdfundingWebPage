@@ -26,7 +26,7 @@
     </header>    
     <div class="marquee-outer">
         <div class="horizon-center vertical-center w-80">
-            <a href="../main/content.php">
+            <a href="../main/content.php?id=12">
                 <p>剩下10天</p>
                 <h3>
                     Alexander AutoChess自走軍棋 - 滿足成為指揮官的快感
