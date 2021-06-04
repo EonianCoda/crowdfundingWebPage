@@ -169,7 +169,6 @@ Returns:
     $proj_list['watch_list'] = $tmp;
 
     $proj_list = json_encode($proj_list);
-    var_dump($proj_list);
     $conn = get_conn();
     $sql = sprintf("UPDATE members SET project = '%s' WHERE id = %s",$proj_list, $user_id);
     $r = mysqli_query($conn,$sql);
@@ -177,4 +176,32 @@ Returns:
     mysqli_close($conn);
     return true;
   }
+
+  function edit_follow_list($id, $status)
+  {
+    session_start();
+    $id = intval($id);
+    $user_id = authentication($_SESSION['online_key']);
+    if ($user_id == 0) return false;
+    $proj_list = get_user_project_list($user_id);
+    
+    $tmp = array();
+
+    foreach($proj_list['follow'] as $proj_id)
+    {
+      if(intval($proj_id) == $id) continue;
+      array_push($tmp, intval($proj_id));
+    }
+    if($status) array_push($tmp, $id);
+    $proj_list['follow'] = $tmp;
+    $proj_list = json_encode($proj_list);
+    $conn = get_conn();
+    $sql = sprintf("UPDATE members SET project = '%s' WHERE id = %s",$proj_list, $user_id);
+    //echo $sql;
+    $r = mysqli_query($conn,$sql);
+    
+    mysqli_close($conn);
+    return true;
+  }
+
 ?>

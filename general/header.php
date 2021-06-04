@@ -15,7 +15,7 @@
         if($lo == true)
         {
             echo "<li><a href='../member/setting.php'>會員中心</a></li>";
-            echo "<li><button disabled='disabled' class='logout' type='button' id='logout'>登出</button></li>";
+            echo "<li><button class='logout' type='button' id='logout' onclick='js_logout()'>登出</button></li>";
         }
         else
         {
@@ -34,8 +34,8 @@
         form.appendChild(hiddenField);
     }
 	
-	$("#logout").on("click", function () 
-    { 
+    function js_logout()
+    {
         if (confirm("確定登出" + "?")) 
         {
             var form = document.createElement("form");
@@ -44,8 +44,7 @@
             document.body.appendChild(form);
 		    form.submit();
 		}
-	}
-	);
+    }
 </script>
 <header class="bottom-divider">
     <div class="container horizon-between">

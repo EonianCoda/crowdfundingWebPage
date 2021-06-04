@@ -135,7 +135,8 @@
                     </div>
                     <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
-                <button class="button"> 贊助專案</button>
+                <?php echo sprintf('<button class="button" onclick="donate(%s, 100)" > 贊助專案</button>',$_GET['id']); ?>
+                
             </div>
             <div class="getmoney">
                 <div class="image-container">
@@ -153,7 +154,7 @@
                     </div>
                     <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
-                <button class="button"> 贊助專案</button>
+                <?php echo sprintf('<button class="button" onclick="donate(%s, 500)" >贊助專案</button>',$_GET['id']); ?>
             </div>
             <div class="getmoney">
                 <div class="image-container">
@@ -171,7 +172,7 @@
                     </div>
                     <p>還剩<?php echo $result['remain_day']; ?>天</p>
                 </div>
-                <button class="button"> 贊助專案</button>
+                <?php echo sprintf('<button class="button" onclick="donate(%s, 2000)" >贊助專案</button>',$_GET['id']); ?>
             </div>
         </div>
         
@@ -182,3 +183,21 @@
     </footer>
 </body>
 </html>
+
+<script>
+    function donate(proj_id, money)
+    {
+        $.post("../backend/donate.php", { 'id': proj_id, 'money': money }).done(function( data ) {
+            if (data == "fail")
+            {
+                alert("請先登入再進行此操作!");
+                window.location.href = '../main/login.php';
+            }
+            else
+            {
+                alert("贊助成功!");
+                location.reload();
+            }
+        });
+    }
+</script>

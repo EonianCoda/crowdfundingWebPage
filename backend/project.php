@@ -276,4 +276,31 @@
             return $result;
         }
     }
+
+    function donate_proj($proj_id, $money)
+    {   
+        session_start();
+        
+        if(!isset($_SESSION['online_key'])) return false;
+        $user_id = authentication($_SESSION['online_key']);
+        if($user_id == 0) return false;
+        $conn = get_conn();
+
+        $sql = sprintf("SELECT sponsor_num, now_money from project WHERE id = '%s'",$proj_id);
+        $r = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($r) == 0) return false;
+        $row = mysqli_fetch_row($r);
+        $row[0] += 1;
+        $row[1] += intval($money);
+
+
+        $sql = sprintf("UPDATE project SET sponsor_num = '%d', now_money = '%d' WHERE id = %s",$row[0], $row[1],$proj_id);
+        $r = mysqli_query($conn, $sql);
+
+        mysqli_close($conn);
+
+        echo $sql;
+        if(!$r) return false;
+        return true;
+    }
 ?>

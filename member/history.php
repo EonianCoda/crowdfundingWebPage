@@ -94,7 +94,7 @@
                                                 echo sprintf('<h3>%s</h3>',$project['name']);
                                             echo '</a>';
                                         echo '</div>';
-                                        echo '<button disabled="disabled" type="button" class="button m-b-10">+關注</button>';
+                                        //echo '<button disabled="disabled" type="button" class="button m-b-10">+關注</button>';
                                         echo '<div class="horizon-between top-divider">';
                                             echo '<div class="horizon-items vertical-center">';
                                                 echo sprintf('<b>%s</b>', $project['now_money']);
