@@ -91,14 +91,14 @@
         </div>
 
 
-        <div>
+        <!-- <div>
             <div class="w-100 bg-block bottom-divider horizon-center">
                 <div class="horizon-between w-50 p-t-20 p-b-20">
                     <a href="./content.php?q=content"> 專案內容</a>
                     <a href="./content.php?q=qa"> 常見問題</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="container horizon-between m-t-20 ">
             <div class="vertical-items horizon-center m-t-20 w-70">
                     <h2>專案內容</h2>
