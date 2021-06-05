@@ -85,7 +85,7 @@
                                 foreach($proj_info as $project)
                                 {
                                     if($project['category'] != $category) continue;
-                                    echo '<div class="swiper-slide project-object">';
+                                    echo '<div class="swiper-slide">';
                                         echo '<div class="image-container">';
                                             echo sprintf('<img src="%s">',$project['main_img']);
                                         echo '</div>';
@@ -113,6 +113,7 @@
                             var ".$swp_id." = new Swiper('#".$swp_id."', {
                                 grabCursor : true,
                                 centeredSlides: true,
+                                spaceBetween: 40,
                                 slidesPerView: 2,
                                 slidesPerGroup: 1,
                                 navigation: {

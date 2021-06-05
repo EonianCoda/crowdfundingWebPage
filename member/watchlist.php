@@ -14,6 +14,15 @@
     <script src="../js/all.js"></script>
     <script src="../js/nav.js"></script>
     <title>Document</title>
+    <style>
+        .swiper-container {
+            height: 27em;
+        }
+        .swiper-container .swiper-button-hidden {
+            opacity: 0;
+        }
+
+    </style>
 </head>
 <body>
     <header class="headerpage">
@@ -75,7 +84,7 @@
                                 foreach($proj_info as $project)
                                 {
                                     if($project['category'] != $category) continue;
-                                    echo '<div class="swiper-slide project-object">';
+                                    echo '<div class="swiper-slide">';
                                         echo '<div class="image-container">';
                                             echo sprintf('<img src="%s">',$project['main_img']);
                                         echo '</div>';
@@ -84,7 +93,6 @@
                                                 echo sprintf('<h3>%s</h3>',$project['name']);
                                             echo '</a>';
                                         echo '</div>';
-                                        //echo '<button disabled="disabled" type="button" class="button m-b-10">+關注</button>';
                                         echo '<div class="horizon-between top-divider">';
                                             echo '<div class="horizon-items vertical-center">';
                                                 echo sprintf('<b>%s</b>', $project['now_money']);
@@ -103,6 +111,7 @@
                             var ".$swp_id." = new Swiper('#".$swp_id."', {
                                 grabCursor : true,
                                 centeredSlides: true,
+                                spaceBetween: 40,
                                 slidesPerView: 2,
                                 slidesPerGroup: 1,
                                 navigation: {
