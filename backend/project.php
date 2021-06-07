@@ -1,5 +1,6 @@
 <?php
     if (!function_exists('authentication')) require_once("account.php");
+    if (!function_exists('edit_proposal_list')) require_once("member_info.php");
     $max_imgname_len = 35;
 
 
@@ -146,6 +147,9 @@
         {
             move_img('intro_img' . $i, $file_path);
         }
+
+        edit_proposal_list($project_id, true);
+        
         return 0;
     }
 
