@@ -13,7 +13,7 @@
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../js/all.js"></script>
     <script src="../js/nav.js"></script>
-    <title>Document</title>
+    <title>我的提案 | Achieve</title>
     <style>
         .swiper-container {
             height: 27em;
@@ -114,6 +114,7 @@
                             var ".$swp_id." = new Swiper('#".$swp_id."', {
                                 grabCursor : true,
                                 centeredSlides: true,
+                                spaceBetween: 40,
                                 slidesPerView: 2,
                                 slidesPerGroup: 1,
                                 navigation: {

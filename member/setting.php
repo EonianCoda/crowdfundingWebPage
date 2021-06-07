@@ -13,7 +13,7 @@
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../js/all.js"></script>
     <script src="../js/nav.js"></script>
-    <title>Document</title>
+    <title>個人資料 | Achieve</title>
 </head>
 <body>
     <header class="headerpage">
