@@ -6,8 +6,7 @@
     {
         $result_proj = donate_proj($_POST['id'], $_POST['money']);
         $result_follow = edit_follow_list($_POST['id'], true);
-
-        if(!$result or !$result_follow) echo "fail";
+        if(!$result_proj or !$result_follow) echo "fail";
         else echo "success";
     }
     
