@@ -64,8 +64,7 @@
                         <div class="prop h-10" >
                             <select class="mt-2 mb-3 p-l-20 w-100 prop" 
                                 name="category" >
-                                <option selected>請選擇專案類別...</option>
-                                <option value=1> 設計 </option>
+                                <option value=1 selected> 設計 </option>
                                 <option value=2> 音樂 </option>
                                 <option value=3> 教育 </option>
                                 <option value=4> 科技 </option>

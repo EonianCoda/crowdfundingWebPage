@@ -104,7 +104,7 @@
 
 
         $info = sprintf('{"intro":"%s","content":"%s","contact":"%s","intro_img":{"1":"%s","2":"%s","3":"%s","4":"%s","5":"%s"}}',
-                        $_POST['intro"'],
+                        $_POST['intro'],
                         $_POST['content'],
                         $_POST['contact'],
                         $_FILES['intro_img1']['name'],
@@ -125,7 +125,7 @@
                 $user_id,
                 $info
                 );
-
+        
         $r = mysqli_query($conn, $sql);
         if(!$r) return 6;
         
