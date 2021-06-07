@@ -1,31 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Achieve is Crowdfunding platform in Asia, which the goal is helping people make their dream come true.  Achieve 是一個群眾集資平台。立志於幫助人們實現夢想。">
-    <meta name="keywords" content="crowdfunding, platform, dream, help">
-    <meta name="author" content="楊雲翔">
-    <meta property="og:site_name" content="Achieve">
-    <meta property="og:locale" content="zh_TW">
-    <meta property="og:title" content="韓寶 | Achieve">
-    <meta property="og:description" content="Achieve is Crowdfunding platform in Asia, which the goal is helping people make their dream come true.  Achieve 是一個群眾集資平台。立志於幫助人們實現夢想。">
-    <meta property="og:image" content="./images/achieve.png">
-    <meta property="og:type" content="website">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>韓寶 | Achieve</title>
-    <link rel="Shortcut Icon" type="image/x-icon" href="../images/icon.png" />
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/util.css">
-    <link rel="stylesheet" href="../styles/basis.css">
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/all.js"></script>
-</head>
-<body>
-    <header class="headerpage">
-    </header>
 
-    <?php
+<?php
         if(!function_exists('get_info')) require_once('../backend/project.php');
 
         function not_find_proj()
@@ -44,7 +21,34 @@
             $result = get_info($_GET['id']);
             if(!$result) not_find_proj();
         }
-    ?>
+?>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Achieve is Crowdfunding platform in Asia, which the goal is helping people make their dream come true.  Achieve 是一個群眾集資平台。立志於幫助人們實現夢想。">
+    <meta name="keywords" content="crowdfunding, platform, dream, help">
+    <meta name="author" content="楊雲翔">
+    <meta property="og:site_name" content="Achieve">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="韓寶 | Achieve">
+    <meta property="og:description" content="Achieve is Crowdfunding platform in Asia, which the goal is helping people make their dream come true.  Achieve 是一個群眾集資平台。立志於幫助人們實現夢想。">
+    <meta property="og:image" content="./images/achieve.png">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <?php echo sprintf("<title>%s | Achieve</title>", $result['name']); ?>
+    <link rel="Shortcut Icon" type="image/x-icon" href="../images/icon.png" />
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/util.css">
+    <link rel="stylesheet" href="../styles/basis.css">
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/all.js"></script>
+</head>
+<body>
+    <header class="headerpage">
+    </header>
+
+
     <section class="bottom-divider p-t-40 p-b-40">
         <div class="container horizon-items">
             <div class="w-60 m-r-30">
